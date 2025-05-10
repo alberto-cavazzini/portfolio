@@ -1,0 +1,63 @@
+.navbar {
+  background-color: #24292e; /* Sfondo scuro, simile a GitHub */
+  color: white;
+  padding: 20px; /* Più padding verticale */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera in basso */
+  position: sticky; /* Rende la navbar sticky */
+  top: 0;
+  z-index: 100; /* Assicura che sia sopra altri elementi */
+}
+
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 1.8em; /* Logo più grande */
+  font-weight: bold;
+  color: #f0f0f0; /* Colore del logo leggermente più chiaro */
+}
+
+.navbar .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Allinea verticalmente i link */
+}
+
+.navbar .nav-links li {
+  margin-left: 25px; /* Più spazio tra i link */
+}
+
+.navbar .nav-links li:first-child {
+  margin-left: 0;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em; /* Link leggermente più grandi */
+  transition: color 0.3s ease; /* Transizione per l'hover */
+}
+
+.navbar .nav-links li a:hover {
+  color: #bbb; /* Colore all'hover più chiaro */
+}
+
+/* Stile specifico per il link del curriculum (se vuoi differenziarlo) */
+.navbar .nav-links li a[href*='figma.com'] { /* Se l'URL contiene 'figma.com' */
+  background-color: #a259ff; /* Colore viola Figma */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+.navbar .nav-links li a[href*='figma.com']:hover {
+  background-color: #8c4ae6;
+  color: white;
+}

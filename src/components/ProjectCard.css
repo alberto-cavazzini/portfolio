@@ -1,0 +1,65 @@
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Aggiungi la transizione per la box-shadow */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Ombra più intensa all'hover */
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #eee;
+  transition: border-bottom-color 0.2s ease-in-out; /* Aggiungi transizione per il colore del bordo */
+}
+
+.project-card:hover img {
+  border-bottom-color: #007bff; /* Bordo inferiore blu all'hover */
+}
+
+.project-card h3 {
+  padding: 15px;
+  margin: 0;
+  font-size: 1.4em;
+  text-align: center;
+  color: #333;
+}
+
+.project-card p {
+  padding: 15px;
+  margin: 0;
+  font-size: 1.0em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.project-card .project-links {
+  padding: 15px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.project-card .project-links a {
+  margin: 0 10px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #007bff;
+  background-color: #e0f7fa;
+  border-radius: 6px;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.project-card .project-links a:hover {
+  background-color: #007bff;
+  color: white;
+}

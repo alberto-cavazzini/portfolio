@@ -1,0 +1,25 @@
+.projects {
+  padding: 60px 20px; /* Aumenta il padding superiore e inferiore */
+  text-align: center;
+  background-color: #fff; /* Sfondo bianco */
+}
+
+.projects .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects h2 {
+  font-size: 2.8em; /* Titolo più grande */
+  margin-bottom: 40px; /* Più spazio sotto il titolo */
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Larghezza minima delle colonne leggermente aumentata */
+  gap: 30px; /* Più spazio tra le schede */
+  margin-top: 30px;
+}

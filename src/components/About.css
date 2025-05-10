@@ -1,0 +1,121 @@
+.about {
+  padding: 60px 20px; /* Aumenta il padding superiore e inferiore */
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  opacity: 0; /* Inizialmente la sezione è invisibile */
+  transform: translateY(20px); /* Inizia leggermente spostata verso il basso */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animazione per opacità e trasformazione */
+}
+
+.about .container {
+  max-width: 960px; /* Aumenta la larghezza massima del contenitore */
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Aumenta lo spazio tra immagine e testo */
+  margin-bottom: 40px; /* Aumenta il margine inferiore */
+}
+
+.about-content .profile-image {
+  width: 180px; /* Leggermente più grande */
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge una leggera ombra */
+  transition: transform 0.3s ease-in-out; /* Aggiunge una transizione per l'animazione */
+}
+
+.about-content .profile-image:hover {
+  transform: scale(1.05); /* Ingrandisce leggermente l'immagine al passaggio del mouse */
+}
+
+.about-content .text-content {
+  flex-grow: 1;
+}
+
+.about.fade-in {
+  opacity: 1; /* Rende la sezione completamente visibile */
+  transform: translateY(0); /* Riporta la sezione alla sua posizione originale */
+}
+
+
+.about h2 {
+  font-size: 2.8em; /* Titolo leggermente più grande */
+  margin-bottom: 25px;
+  color: #007bff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.about p {
+  font-size: 1.15em; /* Testo leggermente più grande */
+  line-height: 1.7; /* Migliora la leggibilità */
+  margin-bottom: 20px; /* Aggiunge un po' di spazio tra i paragrafi */
+}
+
+.skills {
+  margin-top: 50px; /* Aumenta il margine superiore */
+}
+
+.skills h3 {
+  font-size: 1.6em; /* Sottotitolo leggermente più grande */
+  margin-bottom: 15px;
+  color: #555;
+  font-weight: bold;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Leggermente più spazio tra le competenze */
+}
+
+.skills li {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 10px 20px; /* Più padding interno */
+  border-radius: 25px; /* Angoli più arrotondati */
+  font-size: 1em; /* Testo delle competenze leggermente più grande */
+}
+
+.personal-details {
+  margin-top: 50px; /* Aumenta il margine superiore */
+}
+
+.personal-details h3 {
+  font-size: 1.6em; /* Sottotitolo leggermente più grande */
+  margin-bottom: 15px;
+  color: #555;
+  font-weight: bold;
+}
+
+.personal-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.personal-details li {
+  margin-bottom: 10px; /* Più spazio tra i dettagli personali */
+  font-size: 1.1em; /* Testo leggermente più grande */
+}
+
+.personal-details strong {
+  font-weight: bold;
+  color: #333;
+  margin-right: 8px;
+}
+
+.personal-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.personal-details a:hover {
+  text-decoration: underline;
+}

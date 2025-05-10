@@ -1,0 +1,113 @@
+.contact {
+  padding: 80px 20px; /* Aumenta il padding superiore e inferiore */
+  text-align: center;
+  background-color: #f4f4f4; /* Un grigio chiaro diverso */
+}
+
+.contact .container {
+  max-width: 700px; /* Riduci la larghezza massima per centrare meglio il contenuto */
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 3.0em; /* Titolo più grande */
+  margin-bottom: 30px;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.contact p {
+  font-size: 1.2em; /* Testo leggermente più grande */
+  line-height: 1.8; /* Migliora la leggibilità */
+  color: #555;
+  margin-bottom: 40px; /* Più spazio sotto il paragrafo introduttivo */
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px; /* Più spazio sotto le info di contatto */
+}
+
+.contact-info ul li {
+  margin-bottom: 20px; /* Più spazio tra gli elementi della lista */
+  font-size: 1.1em;
+}
+
+.contact-info strong {
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Stili per il modulo di contatto opzionale */
+.contact-form {
+  margin-top: 40px;
+  padding: 30px; /* Più padding interno */
+  border: 1px solid #ddd;
+  border-radius: 12px; /* Angoli più arrotondati */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Ombra leggera */
+  text-align: left;
+}
+
+.contact-form h3 {
+  font-size: 1.8em; /* Titolo del modulo più grande */
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px; /* Più spazio tra i campi del modulo */
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px; /* Più padding interno */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Angoli più arrotondati */
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px; /* Altezza minima per la textarea */
+}
+
+.contact-form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px; /* Più padding nel pulsante */
+  border: none;
+  border-radius: 6px; /* Angoli più arrotondati */
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
