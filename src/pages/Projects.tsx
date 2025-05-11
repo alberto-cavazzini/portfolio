@@ -14,7 +14,7 @@ interface Project {
 // Array di esempio dei tuoi progetti
 const projects: Project[] = [
   {
-    title: "Progetto Esempio 1",
+    title: "Titolo",
     description:
       "Una breve descrizione del Progetto Esempio 1. Potrebbe includere le tecnologie utilizzate e gli obiettivi del progetto.",
     imageUrl: "/images/project1.png", // Assicurati che l'immagine sia nella cartella public/images
@@ -22,7 +22,7 @@ const projects: Project[] = [
     codeUrl: "https://github.com/iltuonome/progetto1",
   },
   {
-    title: "Progetto Esempio 2",
+    title: "Titolo",
     description:
       "Una breve descrizione del Progetto Esempio 2. Descrivi le sfide affrontate e le soluzioni implementate.",
     imageUrl: "/images/project2.png", // Assicurati che l'immagine sia nella cartella public/images

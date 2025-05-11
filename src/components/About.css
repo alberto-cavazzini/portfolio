@@ -1,68 +1,62 @@
 .about {
-  padding: 60px 20px; /* Aumenta il padding superiore e inferiore */
-  background-color: #f9f9f9;
+  padding: 0;
   color: #333;
   font-family: 'Open Sans', sans-serif;
-  opacity: 0; /* Inizialmente la sezione è invisibile */
-  transform: translateY(20px); /* Inizia leggermente spostata verso il basso */
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animazione per opacità e trasformazione */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Gli elementi interni sono in colonna */
+  align-items: center; /* Centra orizzontalmente gli elementi */
+  min-height: 500px; /* Altezza minima della sezione */
+}
+
+.background-heading {
+  background-color: #577098; /* Sfondo blu */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente il contenuto */
+  align-items: center; /* Centra orizzontalmente il contenuto */
+  width: 100%; /* Occupa tutta la larghezza della sezione */
+  height: 800px; /* Imposta un'altezza fissa per il div blu (regola a piacere) */
+  text-align: center; /* Allinea il testo al centro */
+  position: relative; /* Necessario per posizionare assolutamente l'immagine */
+}
+
+.background-heading h1 {
+  font-family: "Roboto slab", sans-serif;
+  font-size: 70px;
+  margin-bottom: 10px;
+  z-index: 1; /* Pone il testo sopra l'immagine */
+}
+
+.subtitle {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  z-index: 1; /* Pone il testo sopra l'immagine */
 }
 
 .about .container {
-  max-width: 960px; /* Aumenta la larghezza massima del contenitore */
-  margin: 0 auto;
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 20px;
+  z-index: 1;
 }
 
 .about-content {
-  display: flex;
-  align-items: center;
-  gap: 40px; /* Aumenta lo spazio tra immagine e testo */
-  margin-bottom: 40px; /* Aumenta il margine inferiore */
+  margin-bottom: 40px;
 }
 
-.about-content .profile-image {
-  width: 180px; /* Leggermente più grande */
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge una leggera ombra */
-  transition: transform 0.3s ease-in-out; /* Aggiunge una transizione per l'animazione */
-}
-
-.about-content .profile-image:hover {
-  transform: scale(1.05); /* Ingrandisce leggermente l'immagine al passaggio del mouse */
-}
-
-.about-content .text-content {
-  flex-grow: 1;
-}
-
-.about.fade-in {
-  opacity: 1; /* Rende la sezione completamente visibile */
-  transform: translateY(0); /* Riporta la sezione alla sua posizione originale */
-}
-
-
-.about h2 {
-  font-size: 2.8em; /* Titolo leggermente più grande */
-  margin-bottom: 25px;
-  color: #007bff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-}
-
-.about p {
-  font-size: 1.15em; /* Testo leggermente più grande */
-  line-height: 1.7; /* Migliora la leggibilità */
-  margin-bottom: 20px; /* Aggiunge un po' di spazio tra i paragrafi */
-}
 
 .skills {
-  margin-top: 50px; /* Aumenta il margine superiore */
+  margin-top: 30px;
 }
 
 .skills h3 {
-  font-size: 1.6em; /* Sottotitolo leggermente più grande */
+  font-size: 1.6em;
   margin-bottom: 15px;
   color: #555;
   font-weight: bold;
@@ -73,23 +67,23 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px; /* Leggermente più spazio tra le competenze */
+  gap: 12px;
 }
 
 .skills li {
   background-color: #e0e0e0;
   color: #333;
-  padding: 10px 20px; /* Più padding interno */
-  border-radius: 25px; /* Angoli più arrotondati */
-  font-size: 1em; /* Testo delle competenze leggermente più grande */
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1em;
 }
 
 .personal-details {
-  margin-top: 50px; /* Aumenta il margine superiore */
+  margin-top: 30px;
 }
 
 .personal-details h3 {
-  font-size: 1.6em; /* Sottotitolo leggermente più grande */
+  font-size: 1.6em;
   margin-bottom: 15px;
   color: #555;
   font-weight: bold;
@@ -101,8 +95,8 @@
 }
 
 .personal-details li {
-  margin-bottom: 10px; /* Più spazio tra i dettagli personali */
-  font-size: 1.1em; /* Testo leggermente più grande */
+  margin-bottom: 10px;
+  font-size: 1.1em;
 }
 
 .personal-details strong {
@@ -118,4 +112,30 @@
 
 .personal-details a:hover {
   text-decoration: underline;
+}
+
+.about.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Media query per schermi con larghezza massima di 768px (tipicamente tablet e mobile) */
+@media (max-width: 768px) {
+  .skills ul {
+    justify-content: center; /* Centra gli elementi su schermi piccoli */
+    gap: 8px; /* Riduci lo spazio tra gli elementi su mobile */
+  }
+
+  .skills li {
+    font-size: 0.9em; /* Riduci leggermente la dimensione del testo su mobile */
+    padding: 8px 16px; /* Riduci leggermente il padding su mobile */
+  }
+}
+
+/* Media query per schermi ancora più piccoli (es. smartphone) */
+@media (max-width: 480px) {
+  .skills li {
+    font-size: 0.85em; /* Riduci ulteriormente la dimensione del testo su smartphone */
+    padding: 6px 12px; /* Riduci ulteriormente il padding su smartphone */
+  }
 }

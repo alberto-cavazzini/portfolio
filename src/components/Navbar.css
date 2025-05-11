@@ -38,13 +38,6 @@
   margin-left: 0;
 }
 
-.navbar .nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1em; /* Link leggermente più grandi */
-  transition: color 0.3s ease; /* Transizione per l'hover */
-}
-
 .navbar .nav-links li a:hover {
   color: #bbb; /* Colore all'hover più chiaro */
 }
@@ -60,4 +53,38 @@
 .navbar .nav-links li a[href*='figma.com']:hover {
   background-color: #8c4ae6;
   color: white;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+  position: relative; /* Necessario per la pseudo-elemento */
+}
+
+.navbar .nav-links li a:hover::after {
+  width: 100%; /* La linea si estende per tutta la larghezza del link all'hover */
+}
+
+/* Applica la sottolineatura a tutti i link che NON hanno la classe 'resume-link' */
+.navbar .nav-links li a:not(.resume-link)::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Regola la posizione della linea */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #bbb; /* Colore della linea all'hover (più chiaro) */
+  transition: width 0.3s ease-in-out;
+}
+
+/* Applica l'effetto di sottolineatura all'hover SOLO ai link che NON hanno la classe 'resume-link' */
+.navbar .nav-links li a:not(.resume-link):hover::after {
+  width: 100%; /* La linea si estende per tutta la larghezza del link all'hover */
+}
+
+.navbar .logo-link {
+  color: white;
+  text-decoration: none; /* Opzionale, ma buona pratica assicurarsi */
 }

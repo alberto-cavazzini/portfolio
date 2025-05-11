@@ -39,14 +39,15 @@ function About() {
       className={`about ${isVisible ? "fade-in" : ""}`}
       ref={aboutSectionRef}
     >
+      <div className="background-heading">
+        <h1>Benvenuto nel mio mondo!</h1>
+        <p className="subtitle">
+          Sono un UX / UI Designer con soluzioni innovative e grafiche per i
+          tuoi prodotti
+        </p>
+      </div>
       <div className="container">
         <div className="about-content">
-          <img
-            src="/images/profile.jpg"
-            alt="La tua foto del profilo"
-            className="profile-image"
-          />
-
           <div className="text-content">
             <h2>Chi sono</h2>
             <p>
