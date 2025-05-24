@@ -1,0 +1,37 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top button {
+  background-color: rgba(113, 113, 113, 0.118);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  /* Modifica questo valore per ingrandire la freccia */
+  font-size: 3em; /* Ho aumentato il valore a 3em come esempio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease-in-out;
+  margin: 20px;
+  margin-bottom: 80px;
+}
+
+.scroll-to-top button:hover {
+  background-color: #7f7f7f;
+}

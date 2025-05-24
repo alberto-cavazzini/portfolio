@@ -5,6 +5,7 @@ import Contact from "./components/Contact";
 import Projects from "./pages/Projects";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; // Importa il componente Footer
+import ScrollToTopButton from "./components/ScrollToTopButton"; // Importa il nuovo componente TSX
 import "./App.css";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer /> {/* Renderizza il componente Footer qui */}
+        <ScrollToTopButton /> {/* Aggiungi il bottone qui */}
       </div>
     </Router>
   );

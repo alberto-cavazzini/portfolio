@@ -1,39 +1,43 @@
+/* Footer.css */
+
 .footer {
-  background-color: #24292e; /* Stesso sfondo scuro della navbar per coerenza */
-  color: #f0f0f0; /* Testo più chiaro */
-  padding: 30px 20px; /* Più padding verticale */
-  text-align: center;
-  font-size: 0.95em; /* Dimensione del font leggermente più grande */
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0c0c0d;
+  border-top: 0.9px solid #333;
+  color: #f0f0f0;
+  padding: 30px 20px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
 }
 
 .footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between; /* Distribuisce il contenuto orizzontalmente */
-  align-items: center; /* Allinea verticalmente gli elementi */
-  flex-direction: column; /* Imposta la direzione principale a colonna per schermi piccoli */
+  margin: 0 auto;
 }
 
 .footer p {
-  margin: 10px 0; /* Aggiunge un po' di margine sopra e sotto il paragrafo */
+  margin: 10px 0;
 }
 
-/* Stili opzionali per i link social */
 .footer .social-links {
   margin-top: 20px;
 }
 
 .footer .social-links a {
   display: inline-block;
-  margin: 0 15px; /* Più spazio tra le icone social */
+  margin: 0 15px;
 }
 
 .footer .social-links img {
-  width: 32px; /* Icone social più grandi */
+  width: 32px;
   height: 32px;
-  vertical-align: middle;
-  opacity: 0.8; /* Opacità leggermente maggiore */
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 
@@ -41,19 +45,70 @@
   opacity: 1;
 }
 
-/* Media query per schermi più grandi per disporre il contenuto in orizzontale */
+.author {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+/* Regole estratte e corrette dal blocco .author nidificato */
+.author h4 {
+  margin-bottom: 0px;
+  color: #f0f0f0;
+}
+
+.author p {
+  color: #83858D;
+}
+
+.author button {
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  padding: 5px 5px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.author button:hover {
+  background-color: #0F83FF;
+  transform: translateY(-2px);
+}
+
+.author button img {
+  width: 30px;
+  height: auto;
+  margin-right: 5px;
+}
+
 @media (min-width: 768px) {
-  .footer .container {
+  .footer {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
   }
 
-  .footer p {
-    margin: 0; /* Rimuove il margine per la disposizione orizzontale */
+  .footer .container {
+    justify-content: flex-end;
+    margin: 0;
+    flex-grow: 1;
+    align-items: flex-end;
   }
 
-  .footer .social-links {
-    margin-top: 0; /* Rimuove il margine superiore per la disposizione orizzontale */
+  .author {
+    margin-bottom: 0;
+    text-align: left;
+    align-items: flex-start;
   }
 }

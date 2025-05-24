@@ -1,36 +1,37 @@
+/* Contact.css */
+
 .contact {
-  padding: 80px 20px; /* Aumenta il padding superiore e inferiore */
+  padding: 80px 20px;
   text-align: center;
 }
 
 .contact .container {
-  max-width: 700px; /* Riduci la larghezza massima per centrare meglio il contenuto */
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .contact h2 {
-  font-size: 3.0em; /* Titolo più grande */
+  font-size: 3.0em;
   margin-bottom: 30px;
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
+  color: #2c3e50;
   font-weight: bold;
 }
 
 .contact p {
-  font-size: 1.2em; /* Testo leggermente più grande */
-  line-height: 1.8; /* Migliora la leggibilità */
+  font-size: 1.2em;
+  line-height: 1.8;
   color: #555;
-  margin-bottom: 40px; /* Più spazio sotto il paragrafo introduttivo */
+  margin-bottom: 40px;
 }
 
 .contact-info ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 40px; /* Più spazio sotto le info di contatto */
+  margin-bottom: 40px;
 }
 
 .contact-info ul li {
-  margin-bottom: 20px; /* Più spazio tra gli elementi della lista */
+  margin-bottom: 20px;
   font-size: 1.1em;
 }
 
@@ -41,36 +42,36 @@
 }
 
 .contact-info a {
-  color: #007bff;
+  color: #3498db;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
 
 .contact-info a:hover {
   text-decoration: underline;
-  color: #0056b3;
+  color: #2980b9;
 }
 
 /* Stili per il modulo di contatto opzionale */
 .contact-form {
   margin-top: 40px;
-  padding: 30px; /* Più padding interno */
+  padding: 30px;
   border: 1px solid #ddd;
-  border-radius: 12px; /* Angoli più arrotondati */
+  border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Ombra leggera */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   text-align: left;
 }
 
 .contact-form h3 {
-  font-size: 1.8em; /* Titolo del modulo più grande */
+  font-size: 1.8em;
   margin-bottom: 30px;
-  color: #333;
+  color: #34495e;
   text-align: center;
 }
 
 .contact-form .form-group {
-  margin-bottom: 20px; /* Più spazio tra i campi del modulo */
+  margin-bottom: 20px;
 }
 
 .contact-form label {
@@ -84,29 +85,29 @@
 .contact-form input[type="email"],
 .contact-form textarea {
   width: 100%;
-  padding: 12px; /* Più padding interno */
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 6px; /* Angoli più arrotondati */
+  border-radius: 6px;
   font-size: 1em;
   box-sizing: border-box;
 }
 
 .contact-form textarea {
   resize: vertical;
-  min-height: 150px; /* Altezza minima per la textarea */
+  min-height: 150px;
 }
 
 .contact-form button[type="submit"] {
-  background-color: #007bff;
+  background-color: #3498db;
   color: white;
-  padding: 12px 25px; /* Più padding nel pulsante */
+  padding: 12px 25px;
   border: none;
-  border-radius: 6px; /* Angoli più arrotondati */
+  border-radius: 6px;
   font-size: 1.1em;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .contact-form button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #2980b9;
 }

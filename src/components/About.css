@@ -1,91 +1,232 @@
+/* About.css */
+
+/* Stile generale per la sezione About */
 .about {
   padding: 0;
   color: #333;
-  font-family: 'Open Sans', sans-serif;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 0; /* Dichiarazione principale */
+  transform: translateY(20px); /* Dichiarazione principale */
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* Gli elementi interni sono in colonna */
-  align-items: center; /* Centra orizzontalmente gli elementi */
-  min-height: 500px; /* Altezza minima della sezione */
+  flex-direction: column;
+  align-items: center;
+  min-height: 500px;
+}
+
+.about.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .background-heading {
-  background-color: #577098; /* Sfondo blu */
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra verticalmente il contenuto */
-  align-items: center; /* Centra orizzontalmente il contenuto */
-  width: 100%; /* Occupa tutta la larghezza della sezione */
-  height: 800px; /* Imposta un'altezza fissa per il div blu (regola a piacere) */
-  text-align: center; /* Allinea il testo al centro */
-  position: relative; /* Necessario per posizionare assolutamente l'immagine */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 60vh;
+  text-align: center;
+  position: relative;
 }
 
 .background-heading h1 {
-  font-family: "Roboto slab", sans-serif;
-  font-size: 70px;
-  margin-bottom: 10px;
-  z-index: 1; /* Pone il testo sopra l'immagine */
+  font-size: 3.5em;
+  margin-bottom: 15px;
+  z-index: 1;
+  color: #fff;
 }
 
 .subtitle {
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  z-index: 1; /* Pone il testo sopra l'immagine */
+  margin: 0px 40px;
+  font-size: 1.3em;
+  z-index: 1;
+  color: #83858D;
 }
 
 .about .container {
-  max-width: 960px;
-  margin: 20px auto;
-  padding: 20px;
-  z-index: 1;
+  padding: 30px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
 .about-content {
-  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 40px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #0e0e0e;
+  height: auto;
+  max-width: 400px;
+  padding: 0px 10px;
+  text-align: left;
+  border: 0.9px solid #222222;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  width: 100%;
+  margin: 0;
+}
 
+.section.right-align {
+  align-self: flex-end;
+}
+
+.section.left-align {
+  align-self: flex-start;
+}
+
+.section p,
+.section h3 {
+  color: white;
+  padding: 10px;
+}
+
+.about-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.about-content h3 {
+  font-size: 1.8em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.about-content p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #d1d1d1;
+}
+
+/* --- Sezione Competenze (Skills) --- */
 .skills {
   margin-top: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.skills h3 {
+.skills h4 {
+  font-size: 25px;
+  color: #ffff;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.skills-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 0.9px solid #222222;
+  border-radius: 15px;
+  background-color: #0e0e0e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  margin-bottom: 30px;
+}
+
+.skills-group h3 {
   font-size: 1.6em;
   margin-bottom: 15px;
-  color: #555;
+  color: #3498db;
   font-weight: bold;
+  text-align: center;
+  width: 100%;
 }
 
-.skills ul {
-  list-style: none;
-  padding: 0;
+.skills-group .skills-row {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-bottom: 50px;
+  justify-content: center;
+  width: 100%;
 }
 
-.skills li {
-  background-color: #e0e0e0;
-  color: #333;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 1em;
+.skills-group .skill-item {
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border: 1px solid #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.skills-group .skill-item:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+.skills-group .skill-item.expanded {
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  color: white;
+}
+
+.skills-group .skill-description {
+  font-size: 0.9em;
+  color: #d1d1d1;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  border: 1px solid #444;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.skill-description.initial { opacity: 0; height: 0; }
+.skill-description.animate { opacity: 1; height: auto; }
+.skill-description.exit { opacity: 0; height: 0; }
+
+/* --- Sezione Dettagli Personali --- */
 .personal-details {
   margin-top: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: #d1d1d1;
 }
 
 .personal-details h3 {
   font-size: 1.6em;
   margin-bottom: 15px;
-  color: #555;
+  color: #3498db;
   font-weight: bold;
 }
 
@@ -95,13 +236,13 @@
 }
 
 .personal-details li {
-  margin-bottom: 10px;
   font-size: 1.1em;
+  margin-bottom: 8px;
 }
 
 .personal-details strong {
   font-weight: bold;
-  color: #333;
+  color: #fff;
   margin-right: 8px;
 }
 
@@ -114,28 +255,230 @@
   text-decoration: underline;
 }
 
-.about.fade-in {
-  opacity: 1;
-  transform: translateY(0);
+/* --- Regole per il bottone "Text" / "Icons" (Toggle) --- */
+/* Il contenitore più esterno del blocco dei pulsanti */
+.toggle {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Media query per schermi con larghezza massima di 768px (tipicamente tablet e mobile) */
+/* Il contenitore con il bordo che avvolge i due pulsanti */
+.toggle-container {
+  display: flex;
+  border: 2px solid #0F83FF;
+  border-radius: 5px;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* I singoli pulsanti "Text" e "Icons" */
+.toggle-button {
+  padding: 10px 15px;
+  background-color: transparent;
+  color: #83858D;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-button:hover {
+  background-color: #0F83FF;
+  color: white;
+}
+
+.toggle-button.active {
+  background-color: #0F83FF;
+  color: white;
+}
+
+/* --- Sezione "Why me" --- */
+.why-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.9px solid #222222;
+  border-radius: 25px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background-color: #0e0e0e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+.why-me-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.why-me-title h2 {
+  font-size: 50px;
+  font-weight: 200;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.why-me-title h2 span {
+  /* Se hai aggiunto uno spazio con CSS, mettilo qui, altrimenti è gestito dall'HTML */
+  /* margin-left: 5px; */
+}
+
+.why-me-title p {
+  font-size: 16px;
+  color: #83858D;
+}
+
+.why-me-button {
+  padding: 10px 15px;
+  border-radius: 50px;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 9px;
+  border: 1px solid #555;
+}
+
+.why-me-cards {
+  padding: 20px;
+  margin-top: 20px;
+  color: #83858D;
+  border: 0.9px solid #222222;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.why-me-cards h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* --- Media Queries --- */
 @media (max-width: 768px) {
-  .skills ul {
-    justify-content: center; /* Centra gli elementi su schermi piccoli */
-    gap: 8px; /* Riduci lo spazio tra gli elementi su mobile */
+  .skills {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
-  .skills li {
-    font-size: 0.9em; /* Riduci leggermente la dimensione del testo su mobile */
-    padding: 8px 16px; /* Riduci leggermente il padding su mobile */
+  .skills-group {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .skills-group .skills-row {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .skills-group .skill-item {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+
+  .about-content {
+    align-items: center;
+    padding: 0 10px;
+    gap: 30px;
+  }
+
+  .section {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .section.right-align,
+  .section.left-align {
+    align-self: center;
+  }
+
+  .personal-details {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Why me media query adjustments */
+  .why-me {
+    padding: 15px;
+  }
+
+  .why-me-button {
+    font-size: 0.9em;
+  }
+
+  .why-me-title h2 {
+    font-size: 35px;
+  }
+
+  .why-me-cards {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .why-me-cards h2 {
+    font-size: 1.3em;
   }
 }
 
-/* Media query per schermi ancora più piccoli (es. smartphone) */
 @media (max-width: 480px) {
-  .skills li {
-    font-size: 0.85em; /* Riduci ulteriormente la dimensione del testo su smartphone */
-    padding: 6px 12px; /* Riduci ulteriormente il padding su smartphone */
+  .skills {
+    gap: 15px;
+  }
+
+  .skills-group {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .skills-group .skill-item {
+    font-size: 0.85em;
+    padding: 6px 12px;
+  }
+
+  .about-content h2 {
+    font-size: 2.2em;
+  }
+
+  .about-content h3 {
+    font-size: 1.6em;
+  }
+
+  .about-content p {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+  .personal-details li {
+    font-size: 1em;
+  }
+
+  /* Why me media query adjustments */
+  .why-me {
+    padding: 10px;
+  }
+
+  .why-me-title h2 {
+    font-size: 25px;
+  }
+
+  .why-me-cards {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .why-me-cards h2 {
+    font-size: 1.2em;
   }
 }

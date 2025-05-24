@@ -1,0 +1,75 @@
+/* CaseStudy.css */
+
+.case-study {
+  padding: 40px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.case-study-header h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #bdc3c7;
+  padding-bottom: 15px;
+}
+
+.case-study h2 {
+  font-size: 2em;
+  color: #34495e;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.case-study h3 {
+  font-size: 1.5em;
+  color: #555;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.case-study p {
+  margin-bottom: 15px;
+}
+
+.case-study strong {
+  font-weight: bold;
+}
+
+.case-study ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.case-study li {
+  margin-bottom: 8px;
+}
+
+.case-study .solution-presentation {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.case-study .call-to-action {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.case-study .call-to-action a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.case-study .call-to-action a:hover {
+  background-color: #2980b9;
+}

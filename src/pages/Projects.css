@@ -1,126 +1,102 @@
-.projects {
-  padding: 40px 0;
- /* Un leggero sfondo per la sezione */
-}
+/* Projects.css */
 
-.projects .container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+.projects {
+  /* Imposta l'immagine di sfondo per l'intera sezione */
+  background-size: cover; /* Copre l'intera area, adattandosi e tagliando se necessario */
+  background-position: center center; /* Centra l'immagine */
+  background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+  background-attachment: fixed; /* L'immagine di sfondo rimane fissa durante lo scroll */
+  padding: 60px 0; /* Aggiungi un po' di padding per distanziare il contenuto dal bordo dello sfondo */
+  color: #fff; /* Assicurati che il testo sia leggibile sullo sfondo */
 }
 
 .projects h2 {
-  font-size: 2.5em;
-  color: #333;
-  margin-bottom: 30px;
   text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: #fff; /* O un colore che si abbini al tuo sfondo */
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Griglia responsiva con almeno 300px per colonna */
-  gap: 20px; /* Spazio tra le card dei progetti */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Padding laterale per la griglia */
 }
 
-/* Stili per il componente ProjectCard (presumendo una struttura simile) */
+/* --- Le tue regole per le card rimangono le stesse --- */
 .project-card {
-  background-color: #fff;
-  border-radius: 8px;
+  background-color: #0e0e0e;
+  border: 0.9px solid #FF4F0F;
+  border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Assicura che l'immagine non esca dai bordi */
-  transition: transform 0.3s ease-in-out; /* Aggiunge un'animazione al passaggio del mouse */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
 }
 
 .project-card:hover {
-  transform: translateY(-5px); /* Leggero sollevamento al passaggio del mouse */
+  transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .project-card img {
   width: 100%;
   height: auto;
-  display: block; /* Rimuove lo spazio extra sotto l'immagine */
-}
-
-.project-card .project-info {
-  padding: 20px;
-  text-align: center;
+  display: block;
 }
 
 .project-card h3 {
-  font-size: 1.5em;
-  color: #333;
+  padding: 15px;
+  margin-top: 0;
   margin-bottom: 10px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #fff;
 }
 
 .project-card p {
-  font-size: 1em;
-  color: #666;
-  margin-bottom: 0px;
+  padding: 0 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #83858D;
   line-height: 1.5;
   height: 50%;
 }
 
 .project-card .project-links {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  padding: 15px;
+  text-align: center;
+  border-top: 0.9px solid #222222;
 }
 
 .project-card .project-links a {
-  display: inline-block;
+  background-color: #0e0e0e;
+  margin: 5px 10px;
   padding: 10px 15px;
   text-decoration: none;
   color: #fff;
-  background-color: #007bff;
-  border-radius: 5px;
+  font-weight: bold;
   font-size: 0.9em;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
+  border-radius: 10px;
+  border: 1px solid #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-card .project-links a:hover {
-  background-color: #0056b3;
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
 }
 
-/* Stili opzionali per un effetto di "overlay" sull'immagine al hover */
-.project-card {
-  position: relative; /* Necessario per posizionare l'overlay */
-}
-
-.project-card .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Overlay nero semi-trasparente */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  color: #fff;
-  border-radius: 8px;
-}
-
-.project-card:hover .overlay {
-  opacity: 1;
-}
-
-.project-card .overlay h3 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
-  height: max-content;
-}
-
-.project-card .overlay p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  padding: 0 20px;
-}
-
-.project-card .overlay a {
-  /* Stili per i link all'interno dell'overlay */
-  border: 1px solid #fff;
+.project-card .project-info {
+  padding: 20px;
+  text-align: center;
 }

@@ -1,11 +1,14 @@
+/* Navbar.css */
+
 .navbar {
-  background-color: #24292e; /* Sfondo scuro, simile a GitHub */
-  color: white;
-  padding: 20px; /* Più padding verticale */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera in basso */
-  position: sticky; /* Rende la navbar sticky */
+  background-color: #0C0C0D;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: sticky;
   top: 0;
-  z-index: 100; /* Assicura che sia sopra altri elementi */
+  z-index: 100;
+  border-bottom: 0.9px solid #383839;
 }
 
 .navbar .container {
@@ -17,74 +20,174 @@
 }
 
 .navbar .logo {
-  font-size: 1.8em; /* Logo più grande */
+  font-size: 1.8em;
   font-weight: bold;
-  color: #f0f0f0; /* Colore del logo leggermente più chiaro */
+  color: #f0f0f0;
+  display: flex; /* Rendi il logo un flex container */
+  align-items: center; /* Allinea verticalmente immagine e testo */
 }
+
+.navbar .logo img {
+  width: 50px;
+  margin-bottom: -3px;
+}
+
+.navbar .logo .logo-name { /* Selettore per il nome Alberto Cavazzini */
+  margin-left: 10px; /* Spazio tra immagine e nome */
+  transition: opacity 0.3s ease, margin-left 0.3s ease;
+  color: #fff;
+}
+
+/* Modifica qui per rimuovere la sottolineatura dal logo-link */
+.navbar .logo-link {
+  font-weight: bold;
+  color: white;
+  text-decoration: none; /* Rimuove la sottolineatura di default */
+}
+
+.navbar .logo-link:hover {
+  text-decoration: none; /* Assicura che non appaia all'hover */
+}
+
 
 .navbar .nav-links {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  align-items: center; /* Allinea verticalmente i link */
+  display: flex; /* Visibile di default su desktop */
+  align-items: center;
 }
 
 .navbar .nav-links li {
-  margin-left: 25px; /* Più spazio tra i link */
+  margin-left: 25px;
 }
 
 .navbar .nav-links li:first-child {
   margin-left: 0;
 }
 
-.navbar .nav-links li a:hover {
-  color: #bbb; /* Colore all'hover più chiaro */
+.navbar .nav-links li a {
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+  position: relative;
+  color: #fff;
 }
 
-/* Stile specifico per il link del curriculum (se vuoi differenziarlo) */
-.navbar .nav-links li a[href*='figma.com'] { /* Se l'URL contiene 'figma.com' */
-  background-color: #a259ff; /* Colore viola Figma */
+.navbar .nav-links li a:hover {
+  color: #bbb;
+}
+
+.navbar .nav-links li .nav-item::after { /* Sottolineatura per gli elementi di navigazione */
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #bbb;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar .nav-links li .nav-item:hover::after {
+  width: 100%;
+}
+
+.navbar .resume-link { /* Stile specifico per il link Curriculum */
+  background-color: #0F83FF;
   color: white;
   padding: 10px 15px;
   border-radius: 6px;
 }
 
-.navbar .nav-links li a[href*='figma.com']:hover {
-  background-color: #8c4ae6;
+.navbar .resume-link:hover {
+  background-color: #055fbe;
   color: white;
 }
 
-.navbar .nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1em;
-  transition: color 0.3s ease;
-  position: relative; /* Necessario per la pseudo-elemento */
+/* --- Hamburger Menu Styles --- */
+.hamburger {
+  display: none; /* Nascosto di default su desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 101; /* Sopra i link */
 }
 
-.navbar .nav-links li a:hover::after {
-  width: 100%; /* La linea si estende per tutta la larghezza del link all'hover */
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Applica la sottolineatura a tutti i link che NON hanno la classe 'resume-link' */
-.navbar .nav-links li a:not(.resume-link)::after {
-  content: "";
-  position: absolute;
-  bottom: -2px; /* Regola la posizione della linea */
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #bbb; /* Colore della linea all'hover (più chiaro) */
-  transition: width 0.3s ease-in-out;
+/* --- Media Query per dispositivi mobili (es. max-width: 768px) --- */
+@media (max-width: 768px) {
+  .navbar .logo .logo-name {
+    display: none; /* Nasconde il nome "Alberto Cavazzini" */
+    margin-left: 0;
+  }
+
+  .navbar .logo img {
+    margin-right: 0; /* Assicura che non ci sia spazio a destra dell'immagine */
+  }
+
+  .navbar .logo {
+    justify-content: flex-start; /* Ri-allinea il logo (solo immagine) a sinistra */
+    width: auto;
+  }
+
+  .navbar .nav-links {
+    display: none; /* Nasconde i link di navigazione di default su mobile */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Sotto la navbar */
+    left: 0;
+    background-color: #0c0c0d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 0.9px solid #383839;
+    padding: 10px 0;
+    text-align: center;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transform: translateY(-20px); /* Inizia un po' più in alto */
+    opacity: 0; /* Inizia invisibile */
+    pointer-events: none; /* Impedisce interazioni quando non visibile */
+  }
+
+  .navbar .nav-links.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navbar .nav-links li {
+    margin: 10px 0; /* Spazio verticale tra gli elementi del menu mobile */
+  }
+
+  .navbar .nav-links li a {
+    padding: 10px;
+    display: block; /* Rende il link cliccabile su tutta la larghezza */
+  }
+
+  /* Mostra l'hamburger icon su mobile */
+  .hamburger {
+    display: flex;
+  }
 }
 
-/* Applica l'effetto di sottolineatura all'hover SOLO ai link che NON hanno la classe 'resume-link' */
-.navbar .nav-links li a:not(.resume-link):hover::after {
-  width: 100%; /* La linea si estende per tutta la larghezza del link all'hover */
+/* Animazione Hamburger per trasformarsi in una "X" */
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
 }
 
-.navbar .logo-link {
-  color: white;
-  text-decoration: none; /* Opzionale, ma buona pratica assicurarsi */
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
 }

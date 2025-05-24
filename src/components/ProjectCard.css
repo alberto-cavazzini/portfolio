@@ -1,65 +1,144 @@
 .project-card {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Aggiungi la transizione per la box-shadow */
+
+background-color: #0e0e0e;
+
+border: 0.9px solid #FF4F0F; /* Ho cambiato il colore del bordo qui */
+
+border-radius: 10px;
+
+overflow: hidden;
+
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+display: flex;
+
+flex-direction: column;
+
+transition: transform 0.3s ease-in-out;
+
 }
+
+
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Ombra più intensa all'hover */
+
+transform: translateY(-5px);
+
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
 }
+
+
 
 .project-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-bottom: 1px solid #eee;
-  transition: border-bottom-color 0.2s ease-in-out; /* Aggiungi transizione per il colore del bordo */
+
+width: 100%;
+
+height: auto;
+
+display: block;
 }
 
-.project-card:hover img {
-  border-bottom-color: #007bff; /* Bordo inferiore blu all'hover */
-}
+
 
 .project-card h3 {
-  padding: 15px;
-  margin: 0;
-  font-size: 1.4em;
-  text-align: center;
-  color: #333;
+
+padding: 15px;
+
+margin-top: 0;
+
+margin-bottom: 10px;
+
+font-size: 1.5em;
+
+text-align: center;
+
+color: #fff;
+
 }
+
+
 
 .project-card p {
-  padding: 15px;
-  margin: 0;
-  font-size: 1.0em;
-  color: #555;
-  line-height: 1.6;
+
+padding: 0 20px;
+
+margin-top: 0;
+
+margin-bottom: 20px;
+
+font-size: 1.1em;
+
+color: #83858D;
+
+line-height: 1.5;
+
+height: 50%;
+
 }
+
+
 
 .project-card .project-links {
-  padding: 15px;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: 1px solid #eee;
+
+padding: 15px;
+
+text-align: center;
+
+border-top: 0.9px solid #222222; /* Questo bordo superiore è rimasto lo stesso */
+
 }
+
+
 
 .project-card .project-links a {
-  margin: 0 10px;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #007bff;
-  background-color: #e0f7fa;
-  border-radius: 6px;
-  font-size: 0.9em;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+background-color: #0e0e0e;
+
+margin: 5px 10px;
+
+padding: 10px 15px;
+
+text-decoration: none;
+
+color: #fff;
+
+font-weight: bold;
+
+font-size: 0.9em;
+
+transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
+
+border-radius: 10px;
+
+border: 1px solid #555; /* Assicurati che questo bordo sia come lo desideri, non è stato modificato */
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
 }
 
+
+
 .project-card .project-links a:hover {
-  background-color: #007bff;
-  color: white;
+
+background-color: #007bff;
+
+color: white;
+
+border-color: #007bff;
+
+}
+
+
+
+.project-card .project-info {
+
+padding: 20px;
+
+text-align: center;
+
 }
