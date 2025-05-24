@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 footer {
   bottom: 0;
   left: 0;
@@ -5,9 +7,11 @@ footer {
 }
 
 body {
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 400;
+  font-style: normal;
   margin: 0px;
   background-color: #0C0C0D;
-  font-family: "Roboto Slab", Sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,5 +25,4 @@ h1 {
   text-align: center;
   margin: 0px 40px;
 }
-
 

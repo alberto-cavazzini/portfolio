@@ -3,7 +3,7 @@
 .footer {
   display: flex;
   flex-direction: row;
-  gap: 100px;
+  gap: 100px; /* Spazio tra gli elementi principali del footer (autore e container) */
   justify-content: space-between;
   align-items: center;
   background-color: #0c0c0d;
@@ -18,13 +18,15 @@
 
 .footer .container {
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto; /* Centra il container, ma flexbox può override */
+  /* Queste regole potrebbero essere ottimizzate in base al layout desiderato */
 }
 
 .footer p {
   margin: 10px 0;
 }
 
+/* Le classi social-links non sono nel tuo HTML fornito, ma le lascio se le usi altrove */
 .footer .social-links {
   margin-top: 20px;
 }
@@ -49,12 +51,12 @@
   display: flex;
   justify-content: left;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: column; /* Gli elementi diretti di .author (h4, p, e .button-group) sono in colonna */
   font-size: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Margine inferiore per mobile, sarà resettato in media query */
 }
 
-/* Regole estratte e corrette dal blocco .author nidificato */
+/* Regole per gli elementi interni a .author */
 .author h4 {
   margin-bottom: 0px;
   color: #f0f0f0;
@@ -64,6 +66,15 @@
   color: #83858D;
 }
 
+/* NUOVO: Stile per il contenitore dei pulsanti */
+.button-group {
+  display: flex; /* Abilita Flexbox per i pulsanti */
+  flex-direction: row; /* Disponi i pulsanti in riga */
+  gap: 10px; /* Aggiungi spazio tra i pulsanti */
+  margin-top: 10px; /* Spazio sopra il gruppo di pulsanti */
+}
+
+/* Stile comune per i pulsanti all'interno di .author */
 .author button {
   border-radius: 5px;
   border: 1px solid #333;
@@ -73,41 +84,41 @@
   transition: all 0.3s ease;
   font-size: 14px;
   padding: 5px 5px;
-  width: max-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: max-content; /* Il pulsante si adatta al contenuto */
+  display: flex; /* Usa Flexbox per allineare immagine e testo */
+  align-items: center; /* Centra verticalmente immagine e testo */
+  justify-content: center; /* Centra orizzontalmente il contenuto del pulsante */
   font-weight: bold;
 }
 
 .author button:hover {
   background-color: #0F83FF;
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* Effetto leggero al passaggio del mouse */
 }
 
 .author button img {
   width: 30px;
   height: auto;
-  margin-right: 5px;
 }
 
+/* Media Query per schermi più grandi (ad esempio, desktop) */
 @media (min-width: 768px) {
   .footer {
-    flex-direction: row;
+    flex-direction: row; /* Già row, ma per chiarezza */
     justify-content: space-between;
-    align-items: flex-end;
-    padding-bottom: 20px;
+    align-items: flex-end; /* Allinea gli elementi principali al fondo */
+    padding-bottom: 20px; /* Ridotto il padding inferiore */
   }
 
   .footer .container {
-    justify-content: flex-end;
+    justify-content: flex-end; /* Allinea il copyright a destra */
     margin: 0;
     flex-grow: 1;
     align-items: flex-end;
   }
 
   .author {
-    margin-bottom: 0;
+    margin-bottom: 0; /* Rimuovi il margine per desktop */
     text-align: left;
     align-items: flex-start;
   }
