@@ -2,10 +2,10 @@
 
 .footer {
   display: flex;
-  flex-direction: row;
-  gap: 100px; /* Spazio tra gli elementi principali del footer (autore e container) */
+  flex-direction: row; /* Il footer gestisce i suoi figli (autore, gruppo link, copyright) in riga */
+  gap: 100px; /* Spazio tra gli elementi principali del footer */
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Centra verticalmente gli elementi principali per default (per mobile) */
   background-color: #0c0c0d;
   border-top: 0.9px solid #333;
   color: #f0f0f0;
@@ -18,8 +18,12 @@
 
 .footer .container {
   display: flex;
-  margin: 0 auto; /* Centra il container, ma flexbox può override */
-  /* Queste regole potrebbero essere ottimizzate in base al layout desiderato */
+  flex-direction: column; /* Imposta il container come colonna per gestire il copyright */
+  justify-content: flex-end; /* Spinge il contenuto (il copyright) in basso */
+  margin-left: auto; /* Spinge il container a destra, occupando lo spazio rimanente */
+  align-items: flex-end; /* Allinea il copyright a destra all'interno del suo container */
+  height: 100%; /* Assicura che il container occupi l'altezza del footer per permettere a justify-content di funzionare */
+  margin-top: 100px;
 }
 
 .footer p {
@@ -66,7 +70,7 @@
   color: #83858D;
 }
 
-/* NUOVO: Stile per il contenitore dei pulsanti */
+/* Stile per il contenitore dei pulsanti */
 .button-group {
   display: flex; /* Abilita Flexbox per i pulsanti */
   flex-direction: row; /* Disponi i pulsanti in riga */
@@ -101,25 +105,50 @@
   height: auto;
 }
 
-/* Media Query per schermi più grandi (ad esempio, desktop) */
+/* Stile per il contenitore dei link Esplora e Contattami */
+.footer-links-group {
+  display: flex; /* Utilizza Flexbox per allineare i link */
+  flex-direction: column; /* Disponi i link in colonna (uno sotto l'altro) */
+  gap: 5px; /* Spazio tra i link */
+  justify-content: flex-start; /* Allinea i link in cima al div */
+  align-items: flex-start; /* Allinea gli elementi figli a sinistra all'interno del loro contenitore */
+}
+
+.footer-links-group a {
+  color: #f0f0f0; /* Colore del testo per i link */
+  text-decoration: none; /* Rimuove la sottolineatura predefinita */
+  transition: color 0.3s ease;
+  white-space: nowrap; /* Impedisce il wrap del testo sui link */
+}
+
+.footer-links-group a:hover {
+  color: #0F83FF; /* Colore al passaggio del mouse */
+}
+
+.footer-links-group h4 {
+  margin-bottom: 4px;
+}
+
+/* --- */
 @media (min-width: 768px) {
   .footer {
-    flex-direction: row; /* Già row, ma per chiarezza */
-    justify-content: space-between;
-    align-items: flex-end; /* Allinea gli elementi principali al fondo */
-    padding-bottom: 20px; /* Ridotto il padding inferiore */
-  }
-
-  .footer .container {
-    justify-content: flex-end; /* Allinea il copyright a destra */
-    margin: 0;
-    flex-grow: 1;
-    align-items: flex-end;
+    /* La modifica chiave è qui: imposta l'altezza minima per il footer */
+    min-height: 120px; /* Regola questa altezza minima a seconda delle tue esigenze */
+    align-items: stretch; /* Permette agli elementi figli di estendersi in altezza */
+    padding-bottom: 20px;
   }
 
   .author {
-    margin-bottom: 0; /* Rimuovi il margine per desktop */
+    margin-bottom: 0;
     text-align: left;
     align-items: flex-start;
   }
+}
+/* --- */
+
+.copyright {
+  color: #83858D; /* Colore del testo per il copyright */
+  font-size: 10px;
+  text-align: right; /* Assicura che il testo sia allineato a destra */
+  width: 100%; /* Assicura che occupi tutta la larghezza disponibile nel suo container */
 }

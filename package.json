@@ -2,7 +2,7 @@
   "name": "home",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alberto-cavazzini.github.io/home",
+  "homepage": "https://alberto-cavazzini.github.io/",
   "dependencies": {
     "@fontsource/montserrat": "^5.2.5",
     "@fontsource/open-sans": "^5.2.5",

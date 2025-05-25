@@ -13,7 +13,7 @@ function Footer() {
 
   const handleMailClick = () => {
     // Puoi aprire il client di posta predefinito dell'utente
-    window.location.href = "mailto:tua.email@example.com"; // !!! SOSTITUISCI CON LA TUA VERA EMAIL !!!
+    window.location.href = "mailto:alberto.cavazzini97@gmail.com"; // !!! SOSTITUISCI CON LA TUA VERA EMAIL !!!
   };
 
   return (
@@ -21,7 +21,7 @@ function Footer() {
       <div className="author">
         <h4>Alberto Cavazzini</h4>
         <p>Learn from top-notch design educators</p>
-        {/* Contenitore per i pulsanti: display flex in CSS per affiancarli */}
+
         <div className="button-group">
           <button onClick={handleFollowClick}>
             <img src="/images/linkedin-logo.png" alt="Linkedin" />
@@ -40,13 +40,25 @@ function Footer() {
         </div>
       </div>
 
+      {/* NUOVO: Spostato il div dei link qui, fuori da 'author' */}
+      <div className="footer-links-group">
+        <h4>Developer Hub</h4>
+        <a href="http://localhost:3000/projects">Esplora</a>
+        <a href="http://localhost:3000/contact">Contattami</a>
+        <a
+          href="https://www.figma.com/file/DE10s1y7IDKYa4e6ichT2F/CV-Alberto-Cavazzini"
+          target="_blank" // Apre il link in una nuova scheda
+          rel="noopener noreferrer" // Migliora la sicurezza
+        >
+          Apri il mio CV
+        </a>
+      </div>
+
       <div className="container">
-        <div>
-          <p className="copyright">
-            &copy; {new Date().getFullYear()}{" "}
-            {process.env.REACT_APP_PORTFOLIO_NAME || "Il tuo Nome"}
-          </p>
-        </div>
+        <p className="copyright">
+          &copy; {new Date().getFullYear()}{" "}
+          {process.env.REACT_APP_PORTFOLIO_NAME || "Il tuo Nome"}
+        </p>
       </div>
     </footer>
   );

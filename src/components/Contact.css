@@ -10,6 +10,16 @@
   margin: 0 auto;
 }
 
+.contact p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact p a {
+  color: #3498db;
+  text-decoration: none;
+}
+
 .contact h2 {
   font-size: 3.0em;
   margin-bottom: 30px;
@@ -64,10 +74,10 @@
 }
 
 
-.contact-form h3 {
+h3 {
   font-size: 1.8em;
   margin-bottom: 30px;
-  color: #34495e;
+  color: #fff;
   text-align: center;
 }
 

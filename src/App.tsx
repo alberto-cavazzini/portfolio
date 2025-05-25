@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   // Sostituisci con l'URL del tuo curriculum su Figma
   const resumeUrl =
-    "https://www.figma.com/file/IL_TUO_ID_FILE/Il-tuo-Curriculum?type=design&node-id=0%3A1&mode=design&t=XYZ123abc-def4-5678-9ghi-jklm0nopqrs";
+    "https://www.figma.com/design/DE10s1y7IDKYa4e6ichT2F/CV-Alberto-Cavazzini?node-id=0-1&p=f&t=EehYjaiLj46uOV9q-0";
 
   return (
     <Router>

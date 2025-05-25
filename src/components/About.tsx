@@ -6,130 +6,94 @@ import "./About.css";
 
 interface Skill {
   name: string;
-
   description: string;
-
   imageUrl?: string;
 }
-
 interface SkillGroup {
   title: string;
-
   skills: Skill[];
 }
 
 const skillsData: SkillGroup[] = [
   {
     title: "Frontend Development",
-
     skills: [
       {
         name: "HTML5",
-
         description:
           "Conoscenza approfondita della struttura semantica del web e delle sue potenzialità per l'accessibilità.",
-
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png",
       },
-
       {
         name: "CSS",
-
         description:
           "Styling avanzato con layout flessibili (Flexbox e Grid), responsive design per diverse risoluzioni e familiarità con pre-processori come Sass.",
-
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
       },
-
       {
         name: "JavaScript",
-
         description:
           "Programmazione dinamica, manipolazione del DOM (Document Object Model), gestione di eventi e conoscenza dei concetti di programmazione asincrona.",
-
         imageUrl:
           "https://wpguru.co.uk/wp-content/uploads/2013/09/Javascript-Logo.png",
       },
-
       {
         name: "TypeScript",
-
         description:
           "Sviluppo di applicazioni scalabili e manutenibili con tipizzazione statica, sfruttando le funzionalità del linguaggio per migliorare la qualità del codice.",
-
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
       },
-
       {
         name: "React",
-
         description:
           "Esperienza nello sviluppo di interfacce utente dinamiche e reattive utilizzando React, la sua libreria di componenti, Hooks e gestione dello stato (es. Context API, Redux - conoscenza di base).",
-
         imageUrl:
           "https://static-00.iconduck.com/assets.00/react-original-wordmark-icon-1679x2048-hjal07w8.png",
       },
     ],
   },
-
   {
     title: "Backend Development",
-
     skills: [
       {
         name: "Node.js",
-
         description:
           "Sviluppo di applicazioni lato server con JavaScript e l'ecosistema Node.js, creazione di API RESTful e gestione di database (es. MongoDB, PostgreSQL - conoscenza di base).",
-
         imageUrl:
           "https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png",
       },
     ],
   },
-
   {
     title: "Tools & Technologies",
-
     skills: [
       {
         name: "Git",
-
         description:
           "Controllo di versione distribuito per la gestione del codice sorgente, collaborazione in team e gestione di branch.",
-
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png",
       },
-
       {
         name: "npm",
-
         description:
           "Gestione delle dipendenze e dei pacchetti per progetti JavaScript.",
-
         imageUrl:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2jsL60TRaLJhvwQpSqsYIdryZY6cxsARwDA&s",
       },
-
       {
         name: "VS Code",
-
         description:
           "Ambiente di sviluppo integrato con funzionalità avanzate per la produttività.",
-
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519",
       },
-
       {
         name: "Figma",
-
         description: "Strumento per la progettazione UI e la prototipazione.",
-
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1365px-Figma-logo.svg.png",
       },
@@ -139,39 +103,25 @@ const skillsData: SkillGroup[] = [
 
 const About = () => {
   const aboutSectionRef = useRef<HTMLElement>(null);
-
   const [isVisible, setIsVisible] = useState(false);
-
   const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
-
   const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
-
   const [hasAnimated, setHasAnimated] = useState(false);
-
   const [currentText, setCurrentText] = useState("");
-
   const [textIndex, setTextIndex] = useState(0);
-
   const [isDeleting, setIsDeleting] = useState(false);
-
   const [typingSpeed, setTypingSpeed] = useState(50);
-
   const [pauseDuration, setPauseDuration] = useState(2000);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-
   const sentences = [
     "Sono un UX / UI Designer con soluzioni innovative e grafiche per i tuoi prodotti.",
-
     "Creo esperienze utente coinvolgenti e intuitive.",
-
     "Il mio obiettivo è trasformare le idee in realtà digitali.",
-
     "Passionato di design e tecnologia, sempre alla ricerca di nuove sfide.",
   ];
 
   const [showImages, setShowImages] = useState(false);
-
   const [togglePosition, setTogglePosition] = useState("text");
 
   useEffect(() => {
@@ -339,24 +289,17 @@ const About = () => {
 
     animate: {
       opacity: 1,
-
       height: "auto",
-
       transition: {
         height: { duration: 0.4, ease: "easeInOut" },
-
         opacity: { duration: 0.2, delay: 0.1 },
       },
     },
-
     exit: {
       opacity: 0,
-
       height: 0,
-
       transition: {
         height: { duration: 0.4, ease: "easeInOut" },
-
         opacity: { duration: 0.2 },
       },
     },
@@ -647,49 +590,6 @@ const About = () => {
               design quality.
             </p>
           </div>
-        </div>
-
-        <div className="personal-details">
-          <h3>Dettagli personali</h3>
-
-          <ul>
-            <li>
-              <strong>Nome:</strong> Alberto Cavazzini
-            </li>
-
-            <li>
-              <strong>Città:</strong> Bologna, Italy
-            </li>
-
-            <li>
-              <strong>Email:</strong>{" "}
-              <a href="mailto:alberto.cavazzini97@gmail.com">
-                alberto.cavazzini97@gmail.com
-              </a>
-            </li>
-
-            <li>
-              <strong>LinkedIn:</strong>{" "}
-              <a
-                href="https://www.linkedin.com/in/alberto-cavazzini-dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Il mio profilo LinkedIn
-              </a>
-            </li>
-
-            <li>
-              <strong>GitHub:</strong>{" "}
-              <a
-                href="https://github.com/albertocavazzini"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Il mio profilo GitHub
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </section>

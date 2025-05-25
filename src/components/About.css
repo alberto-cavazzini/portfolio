@@ -40,7 +40,7 @@
 }
 
 .subtitle {
-  margin: 0px 40px;
+  margin: 0px 0px;
   font-size: 1.3em;
   z-index: 1;
   color: #83858D;
@@ -341,7 +341,6 @@
   border-radius: 50px;
   background: none;
   color: #fff;
-  cursor: pointer;
   font-size: 9px;
   border: 1px solid #555;
 }
