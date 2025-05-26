@@ -14,11 +14,6 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.project-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 .project-card h3 {
   padding: 15px;
@@ -70,4 +65,22 @@
 .project-card .project-info {
   padding: 20px;
   text-align: center;
+}
+
+.project-card-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 0.9px solid #222222;
+  height: 120px;
+  width: auto;
+}
+
+.project-card-image img {
+  width: 100%; /* L'immagine riempie il 100% della larghezza del suo contenitore (.project-card-image) */
+  height: 100%; /* L'immagine riempie il 100% dell'altezza del suo contenitore */
+  object-fit: cover; /* **LA SOLUZIONE**: Scala l'immagine per coprire l'intero contenitore mantenendo le proporzioni. Le parti in eccesso verranno tagliate, creando l'effetto "anteprima" che riempie. */
+  display: block; /* Rimuove lo spazio bianco sotto l'immagine che a volte si crea */
 }
