@@ -20,7 +20,7 @@ function Footer() {
     <footer className="footer">
       <div className="author">
         <h4>Alberto Cavazzini</h4>
-        <p>Learn from top-notch design educators</p>
+        <p>Seguimi per rimanere aggiornato!</p>
 
         <div className="button-group">
           <button onClick={handleFollowClick}>

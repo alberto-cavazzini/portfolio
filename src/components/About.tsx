@@ -81,8 +81,7 @@ const skillsData: SkillGroup[] = [
         name: "npm",
         description:
           "Gestione delle dipendenze e dei pacchetti per progetti JavaScript.",
-        imageUrl:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2jsL60TRaLJhvwQpSqsYIdryZY6cxsARwDA&s",
+        imageUrl: "https://img.icons8.com/?size=96&id=24895&format=png",
       },
       {
         name: "VS Code",

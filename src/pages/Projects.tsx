@@ -20,7 +20,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "App Meteo",
-    description: "Breve descrizione...",
+    description: "",
     imageUrl: "/images/app-meteo.png",
     id: "app-meteo",
     liveUrl: "https://alberto-cavazzini.github.io/app-meteo/",
@@ -31,7 +31,7 @@ const projects: Project[] = [
 
   {
     title: "Pong Game",
-    description: "Breve descrizione...",
+    description: "",
     imageUrl: "/images/project2.png",
     id: "pong-game",
     liveUrl: "https://alberto-cavazzini.github.io/pong-game/",
@@ -41,8 +41,7 @@ const projects: Project[] = [
 
   {
     title: "Snake Game",
-    description:
-      "Una breve descrizione del Progetto Esempio 2. Descrivi le sfide affrontate e le soluzioni implementate.",
+    description: "",
     imageUrl: "/images/project2.png", // Assicurati che l'immagine sia nella cartella public/images
     id: "snake-game",
     liveUrl: "https://alberto-cavazzini.github.io/snake-game/",
@@ -51,8 +50,7 @@ const projects: Project[] = [
 
   {
     title: "Tic Tac Toe",
-    description:
-      "Una breve descrizione del Progetto Esempio 2. Descrivi le sfide affrontate e le soluzioni implementate.",
+    description: "",
     imageUrl: "/images/project2.png", // Assicurati che l'immagine sia nella cartella public/images
     id: "tic-tac-toe",
     liveUrl: "https://alberto-cavazzini.github.io/TicTacToe-Game/",
@@ -61,8 +59,7 @@ const projects: Project[] = [
 
   {
     title: "Stopwatch",
-    description:
-      "Una breve descrizione del Progetto Esempio 2. Descrivi le sfide affrontate e le soluzioni implementate.",
+    description: "",
     imageUrl: "/images/project2.png", // Assicurati che l'immagine sia nella cartella public/images
     id: "stopwatch",
     liveUrl: "https://alberto-cavazzini.github.io/stopwatch/",
@@ -71,8 +68,7 @@ const projects: Project[] = [
 
   {
     title: "Youtube Clone",
-    description:
-      "Una breve descrizione del Progetto Esempio 2. Descrivi le sfide affrontate e le soluzioni implementate.",
+    description: "",
     imageUrl: "/images/project2.png", // Assicurati che l'immagine sia nella cartella public/images
     id: "youtube-clone",
     liveUrl: "https://alberto-cavazzini.github.io/Youtube-Clone/",
