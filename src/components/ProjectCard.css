@@ -72,15 +72,55 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   border-bottom: 0.9px solid #222222;
-  height: 120px;
+  height: 250px;
   width: auto;
 }
 
-.project-card-image img {
+.project-card-image #app-meteo {
   width: 100%; /* L'immagine riempie il 100% della larghezza del suo contenitore (.project-card-image) */
   height: 100%; /* L'immagine riempie il 100% dell'altezza del suo contenitore */
   object-fit: cover; /* **LA SOLUZIONE**: Scala l'immagine per coprire l'intero contenitore mantenendo le proporzioni. Le parti in eccesso verranno tagliate, creando l'effetto "anteprima" che riempie. */
   display: block; /* Rimuove lo spazio bianco sotto l'immagine che a volte si crea */
+  object-position: center 0px; 
+}
+
+.project-card-image #pong-game {
+  width: 100%; /* L'immagine riempie il 100% della larghezza del suo contenitore (.project-card-image) */
+  height: 100%; /* L'immagine riempie il 100% dell'altezza del suo contenitore */
+  object-fit: cover; /* **LA SOLUZIONE**: Scala l'immagine per coprire l'intero contenitore mantenendo le proporzioni. Le parti in eccesso verranno tagliate, creando l'effetto "anteprima" che riempie. */
+  display: block; /* Rimuove lo spazio bianco sotto l'immagine che a volte si crea */
+  object-position: center 0px; 
+}
+
+.project-card-image #snake-game {
+  width: 100%; /* L'immagine riempie il 100% della larghezza del suo contenitore (.project-card-image) */
+  height: 100%; /* L'immagine riempie il 100% dell'altezza del suo contenitore */
+  object-fit: cover; /* **LA SOLUZIONE**: Scala l'immagine per coprire l'intero contenitore mantenendo le proporzioni. Le parti in eccesso verranno tagliate, creando l'effetto "anteprima" che riempie. */
+  display: block; /* Rimuove lo spazio bianco sotto l'immagine che a volte si crea */
+  object-position: center -15px; 
+}
+
+.project-card-image #tic-tac-toe {
+  width: 100%; /* L'immagine riempie il 100% della larghezza del suo contenitore (.project-card-image) */
+  height: 100%; /* L'immagine riempie il 100% dell'altezza del suo contenitore */
+  object-fit: cover; /* **LA SOLUZIONE**: Scala l'immagine per coprire l'intero contenitore mantenendo le proporzioni. Le parti in eccesso verranno tagliate, creando l'effetto "anteprima" che riempie. */
+  display: block; /* Rimuove lo spazio bianco sotto l'immagine che a volte si crea */
+  object-position: center -80px; 
+}
+
+.project-card-image #stopwatch {
+  width: 100%; /* L'immagine riempie il 100% della larghezza del suo contenitore (.project-card-image) */
+  height: 100%; /* L'immagine riempie il 100% dell'altezza del suo contenitore */
+  object-fit: cover; /* **LA SOLUZIONE**: Scala l'immagine per coprire l'intero contenitore mantenendo le proporzioni. Le parti in eccesso verranno tagliate, creando l'effetto "anteprima" che riempie. */
+  display: block; /* Rimuove lo spazio bianco sotto l'immagine che a volte si crea */
+  object-position: center -15px; 
+}
+
+.project-card-image #youtube-clone {
+  width: 100%; /* L'immagine riempie il 100% della larghezza del suo contenitore (.project-card-image) */
+  height: 100%; /* L'immagine riempie il 100% dell'altezza del suo contenitore */
+  object-fit: cover; /* **LA SOLUZIONE**: Scala l'immagine per coprire l'intero contenitore mantenendo le proporzioni. Le parti in eccesso verranno tagliate, creando l'effetto "anteprima" che riempie. */
+  display: block; /* Rimuove lo spazio bianco sotto l'immagine che a volte si crea */
+  object-position: center 0px; 
 }

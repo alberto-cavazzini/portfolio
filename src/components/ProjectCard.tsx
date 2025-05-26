@@ -5,6 +5,7 @@ interface ProjectCardProps {
   project: {
     title: string;
     description: string;
+    id: string;
     imageUrl: string;
     liveUrl?: string;
     codeUrl?: string;
@@ -18,7 +19,9 @@ function ProjectCard({ project }: ProjectCardProps) {
         <h3>{project.title}</h3>
       </div>
       <div className="project-card-image">
-        {project.imageUrl && <img src={project.imageUrl} alt={project.title} />}
+        {project.imageUrl && (
+          <img src={project.imageUrl} alt={project.title} id={project.id} />
+        )}
       </div>
       <div className="project-links">
         {project.liveUrl && (
