@@ -327,23 +327,30 @@ const About = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          {/* Card "Chi sono" */}
-          <motion.div
-            className="section right-align"
-            initial="hiddenLeft"
-            animate={isVisible ? "visibleLeft" : "hiddenLeft"}
-            variants={cardZigZagVariants}
-            custom={0}
-          >
-            <h3>Chi sono</h3>
-            <p>
-              Ciao! Sono Alberto, il tuo Web Developer! Ho da sempre una
-              passione per l'informatica e la creazione di applicazioni web. La
-              mia avventura nel mondo del codice è iniziata dalla curiosità di
-              dare vita a idee digitali, e da allora non mi sono più fermato!
-            </p>
-          </motion.div>
-
+          <div className="intro-flex-container">
+            <img
+              src="/images/Adobe Express - file (2).png"
+              alt=""
+              className="image-chisono"
+            />
+            {/* Card "Chi sono" */}
+            <motion.div
+              className="section right-align"
+              initial="hiddenLeft"
+              animate={isVisible ? "visibleLeft" : "hiddenLeft"}
+              variants={cardZigZagVariants}
+              custom={0}
+            >
+              <h3>Chi sono</h3>
+              <p>
+                Ciao! Sono Alberto, il tuo Web Developer! Ho da sempre una
+                passione per l'informatica e la creazione di applicazioni web.
+                La mia avventura nel mondo del codice è iniziata dalla curiosità
+                di dare vita a idee digitali, e da allora non mi sono più
+                fermato!
+              </p>
+            </motion.div>
+          </div>
           {/* Card "Cosa faccio" */}
           <motion.div
             className="section left-align"
