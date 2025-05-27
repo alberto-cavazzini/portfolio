@@ -1,7 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-
 import { motion, AnimatePresence } from "framer-motion";
-
 import "./About.css";
 
 interface Skill {
@@ -9,6 +7,7 @@ interface Skill {
   description: string;
   imageUrl?: string;
 }
+
 interface SkillGroup {
   title: string;
   skills: Skill[];
@@ -130,21 +129,18 @@ const About = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-
             if (!hasAnimated) {
               setHasAnimated(true);
             }
           }
         });
       },
-
       {
         threshold: 0.1,
       }
     );
 
     const currentRef = aboutSectionRef.current;
-
     if (currentRef) {
       observer.observe(currentRef);
     }
@@ -160,7 +156,6 @@ const About = () => {
     if (hasAnimated) {
       const typeText = () => {
         const i = textIndex % sentences.length;
-
         const fullText = sentences[i];
 
         const current = isDeleting
@@ -175,7 +170,6 @@ const About = () => {
           }, pauseDuration);
         } else if (isDeleting && current === "") {
           setIsDeleting(false);
-
           setTextIndex(i + 1);
         }
 
@@ -199,18 +193,26 @@ const About = () => {
   ]);
 
   const toggleSkillDescription = (skillName: string, groupTitle: string) => {
-    setExpandedSkill((prevSkill) =>
-      prevSkill === skillName ? null : skillName
-    );
+    // Determina il nuovo stato per la skill espansa
+    const newExpandedSkill = expandedSkill === skillName ? null : skillName;
+    setExpandedSkill(newExpandedSkill);
 
-    setExpandedGroup((prevGroup) =>
-      prevGroup === groupTitle ? null : groupTitle
-    );
+    // Gestisce lo stato del gruppo espanso
+    if (newExpandedSkill === null) {
+      // Se stiamo chiudendo una skill (newExpandedSkill è null)
+      // e il gruppo corrente era quello della skill chiusa, allora chiudi anche il gruppo.
+      if (expandedGroup === groupTitle) {
+        setExpandedGroup(null);
+      }
+    } else {
+      // Se stiamo aprendo una nuova skill (newExpandedSkill non è null),
+      // assicurati che il suo gruppo sia aperto.
+      setExpandedGroup(groupTitle);
+    }
   };
 
   const handleToggleShowImages = () => {
     setShowImages(!showImages);
-
     setTogglePosition((prev) => (prev === "text" ? "icons" : "text"));
   };
 
@@ -233,7 +235,6 @@ const About = () => {
   };
 
   // Varianze per l'animazione a zig-zag delle card
-
   const cardZigZagVariants = {
     hiddenLeft: { opacity: 0, x: -100 },
     visibleLeft: {
@@ -261,20 +262,20 @@ const About = () => {
   };
 
   const descriptionVariants = {
-    initial: { opacity: 0, height: 0 },
+    initial: { opacity: 0, maxHeight: 0 }, // Inizia con max-height: 0
     animate: {
       opacity: 1,
-      height: "auto",
+      maxHeight: "500px", // Un valore sufficientemente grande per contenere qualsiasi descrizione
       transition: {
-        height: { duration: 0.4, ease: "easeInOut" },
+        maxHeight: { duration: 0.4, ease: "easeInOut" },
         opacity: { duration: 0.2, delay: 0.1 },
       },
     },
     exit: {
       opacity: 0,
-      height: 0,
+      maxHeight: 0, // Torna a max-height: 0 in uscita
       transition: {
-        height: { duration: 0.4, ease: "easeInOut" },
+        maxHeight: { duration: 0.4, ease: "easeInOut" },
         opacity: { duration: 0.2 },
       },
     },
@@ -294,7 +295,6 @@ const About = () => {
         <motion.h1 variants={headingVariants}>
           Benvenuto nel mio mondo!
         </motion.h1>
-
         <motion.p variants={subtitleVariants} className="subtitle">
           {currentText}
         </motion.p>
@@ -305,11 +305,9 @@ const About = () => {
           className="about-content" // Questo è il genitore Flexbox per le card
           initial="hidden" // Puoi rimuovere questa animazione generale se non la vuoi sulle card all'inizio
           animate={isVisible ? "visible" : "hidden"}
-
           // variants={textVariants} // Questa variante potrebbe causare conflitti, meglio rimuoverla o ridefinirla
         >
           {/* Card "Chi sono" - allineata a sinistra */}
-
           <motion.div
             className="section right-align"
             initial="hiddenLeft"
@@ -318,7 +316,6 @@ const About = () => {
             custom={0} // Custom prop per lo staggered delay se vuoi, ma con i variants diretti non è sempre necessario
           >
             <h3>Chi sono</h3>
-
             <p>
               Ciao! Sono Alberto, uno sviluppatore web e UX/UI designer con sede
               nella bellissima Bologna. La mia passione per la creazione di
@@ -329,7 +326,6 @@ const About = () => {
           </motion.div>
 
           {/* Card "Il mio percorso" - allineata a sinistra */}
-
           <motion.div
             className="section left-align"
             initial="hiddenLeft"
@@ -338,7 +334,6 @@ const About = () => {
             custom={1}
           >
             <h3>Il mio percorso</h3>
-
             <p>
               Il mio percorso nel mondo del web è iniziato con lo studio
               autonomo e la realizzazione di progetti personali focalizzati
@@ -352,7 +347,6 @@ const About = () => {
           </motion.div>
 
           {/* Card "La mia filosofia" - allineata a destra */}
-
           <motion.div
             className="section right-align"
             initial="hiddenRight"
@@ -361,7 +355,6 @@ const About = () => {
             custom={2}
           >
             <h3>La mia filosofia</h3>
-
             <p>
               Credo fermamente che un buon design vada oltre l'estetica; deve
               essere intuitivo, accessibile e centrato sull'utente. Il mio
@@ -374,7 +367,6 @@ const About = () => {
           </motion.div>
 
           {/* Card "Cosa mi appassiona" - allineata a sinistra */}
-
           <motion.div
             className="section left-align"
             initial="hiddenLeft"
@@ -383,7 +375,6 @@ const About = () => {
             custom={3}
           >
             <h3>Cosa mi appassiona</h3>
-
             <p>
               Sono particolarmente entusiasta di esplorare nuove tecnologie e di
               applicarle per risolvere problemi reali. Mi affascina il design di
@@ -396,7 +387,6 @@ const About = () => {
           </motion.div>
 
           {/* Card "Guardando al futuro" - allineata a destra */}
-
           <motion.div
             className="section right-align"
             initial="hiddenRight"
@@ -405,7 +395,6 @@ const About = () => {
             custom={4}
           >
             <h3>Guardando al futuro</h3>
-
             <p>
               Sono sempre alla ricerca di nuove sfide e opportunità per crescere
               professionalmente e contribuire a progetti stimolanti. Il mio
@@ -417,15 +406,11 @@ const About = () => {
           </motion.div>
 
           {/* Paragrafo finale fuori dalle card */}
-
           <p
             style={{
               color: "#d1d1d1",
-
               textAlign: "center",
-
               maxWidth: "800px",
-
               margin: "40px auto 0",
             }}
           >
@@ -437,7 +422,6 @@ const About = () => {
 
         <div className="skills">
           <h4 className="skills-title">Le mie competenze</h4>
-
           <div className="toggle">
             <div className="toggle-container">
               <button
@@ -446,7 +430,6 @@ const About = () => {
               >
                 Text
               </button>
-
               <button
                 className={`toggle-button ${showImages ? "active" : ""}`}
                 onClick={handleToggleShowImages}
@@ -459,7 +442,6 @@ const About = () => {
           {skillsData.map((group) => (
             <div className="skills-group" key={group.title}>
               <h4>{group.title}</h4>
-
               <div className="skills-row">
                 {group.skills.map((skill, index) => {
                   return (
@@ -484,9 +466,7 @@ const About = () => {
                             alt={skill.name}
                             style={{
                               maxWidth: "50px",
-
                               maxHeight: "50px",
-
                               borderRadius: "5px",
                             }}
                           />
@@ -500,6 +480,7 @@ const About = () => {
               </div>
 
               <AnimatePresence>
+                {/* Mostra la descrizione solo se expandedGroup corrisponde E expandedSkill non è null */}
                 {expandedGroup === group.title && expandedSkill && (
                   <motion.div
                     className="skill-description"
@@ -519,47 +500,36 @@ const About = () => {
 
         <div className="why-me">
           <button className="why-me-button">Perché scegliere me</button>
-
           <div className="why-me-title">
             <h2>
               <span>Perché io come</span>
-
               <span style={{ color: "#83858D" }}> Web Developer</span>
             </h2>
-
             <p>Why Partner with Me for the Design Excellence</p>
           </div>
-
           <div className="why-me-cards">
             <h2>Senior Designer.</h2>
-
             <p>
               Experience and expertise at your fingertips, ensuring exceptional
               design quality.
             </p>
           </div>
-
           <div className="why-me-cards">
             <h2>Senior Designer.</h2>
-
             <p>
               Experience and expertise at your fingertips, ensuring exceptional
               design quality.
             </p>
           </div>
-
           <div className="why-me-cards">
             <h2>Senior Designer.</h2>
-
             <p>
               Experience and expertise at your fingertips, ensuring exceptional
               design quality.
             </p>
           </div>
-
           <div className="why-me-cards">
             <h2>Senior Designer.</h2>
-
             <p>
               Experience and expertise at your fingertips, ensuring exceptional
               design quality.
