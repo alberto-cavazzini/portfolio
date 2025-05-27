@@ -16,6 +16,11 @@ function Footer() {
     window.location.href = "mailto:alberto.cavazzini97@gmail.com"; // !!! SOSTITUISCI CON LA TUA VERA EMAIL !!!
   };
 
+  const handleWhatsappClick = () => {
+    // Puoi aprire il client di posta predefinito dell'utente
+    window.open("https://wa.me/393771970249"); // !!! SOSTITUISCI CON LA TUA VERA EMAIL !!!
+  };
+
   return (
     <footer className="footer">
       <div className="author">
@@ -36,6 +41,10 @@ function Footer() {
           {/* Aggiunta la classe 'mail-button' per stili specifici */}
           <button onClick={handleMailClick} className="mail-button">
             <img src="/images/icons8-apple-mail-480.png" alt="Mail" />
+          </button>
+
+          <button onClick={handleWhatsappClick}>
+            <img src="/images/whatsapp-icon.png" alt="Contattaci su WhatsApp" />{" "}
           </button>
         </div>
       </div>

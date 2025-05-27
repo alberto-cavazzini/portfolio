@@ -32,6 +32,13 @@ const skillsData: SkillGroup[] = [
           "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
       },
       {
+        name: "SCSS",
+        description:
+          "Potenzio il CSS con funzionalità avanzate. SCSS mi permette di scrivere stili più organizzati, modulari e manutenibili, accelerando il processo di design.",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1200px-Sass_Logo_Color.svg.png",
+      },
+      {
         name: "JavaScript",
         description:
           "Il motore dell'interattività. Implemento logiche complesse e funzionalità dinamiche per rendere le applicazioni fluide e coinvolgenti.",
@@ -52,13 +59,6 @@ const skillsData: SkillGroup[] = [
         imageUrl:
           "https://static-00.iconduck.com/assets.00/react-original-wordmark-icon-1679x2048-hjal07w8.png",
       },
-      {
-        name: "SCSS",
-        description:
-          "Potenzio il CSS con funzionalità avanzate. SCSS mi permette di scrivere stili più organizzati, modulari e manutenibili, accelerando il processo di design.",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Sass_Logo_Color.svg/2560px-Sass_Logo_Color.svg.png",
-      },
     ],
   },
   {
@@ -75,8 +75,7 @@ const skillsData: SkillGroup[] = [
         name: "Python",
         description:
           "Sfrutto la versatilità di Python per lo sviluppo backend, automazione e analisi dati, creando soluzioni efficienti e potenti per ogni esigenza.",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
+        imageUrl: "/images/python-icon.png",
       },
     ],
   },
@@ -94,8 +93,7 @@ const skillsData: SkillGroup[] = [
         name: "GitHub",
         description:
           "Non solo controllo versione, ma anche piattaforma di collaborazione. Uso GitHub per gestire repository, revisioni di codice e contribuire a progetti open-source, garantendo trasparenza e organizzazione.",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png",
+        imageUrl: "/images/github-icon.png",
       },
       {
         name: "npm",
