@@ -368,19 +368,51 @@
 
 .image-chisono {
   width: 550px;
-  height: 550px;
+  height: auto;
   margin-bottom: -85px;
   margin-left: -50px;
+}
+
+.image-cosa {
+  width: 550px;
+  height: auto;
+  margin-bottom: -85px;
+  margin-right: -50px;
 }
 
 .intro-flex-container{
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 14em
+  gap: 100px;
+  margin-bottom: 100px;
 }
 
 /* --- Media Queries --- */
+
+
+@media (max-width: 1024px) {
+  .image-cosa, .image-chisono {
+    width: 40vw; /* Usa la larghezza della viewport per fluidità */
+    max-width: 400px; /* Limita la dimensione massima */
+  }
+}
+
+@media (max-width: 768px) {
+  .image-cosa, .image-chisono {
+    width: 70vw; /* Più grande su mobile */
+    max-width: 300px; /* Limita la dimensione massima su mobile */
+    margin: 0 auto; /* Centra l'immagine se è da sola */
+    display: block; /* Assicurati che sia un blocco per il margin auto */
+  }
+
+  .intro-flex-container{
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 100px;
+}
+}
 @media (max-width: 768px) {
   .skills {
     flex-direction: column;

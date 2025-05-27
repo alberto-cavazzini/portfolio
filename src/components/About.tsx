@@ -351,25 +351,31 @@ const About = () => {
               </p>
             </motion.div>
           </div>
-          {/* Card "Cosa faccio" */}
-          <motion.div
-            className="section left-align"
-            initial="hiddenLeft"
-            animate={isVisible ? "visibleLeft" : "hiddenLeft"}
-            variants={cardZigZagVariants}
-            custom={1}
-          >
-            <h3>Cosa faccio</h3>
-            <p>
-              Mi occupo dello sviluppo completo di applicazioni web, partendo
-              dalla progettazione dell'interfaccia utente (frontend) fino alla
-              logica del server e alla gestione dei dati (backend). Ho
-              consolidato le mie competenze attraverso la realizzazione di
-              diversi progetti personali, che mi hanno permesso di esplorare e
-              padroneggiare le tecnologie più innovative del settore.
-            </p>
-          </motion.div>
-
+          <div className="intro-flex-container">
+            {/* Card "Cosa faccio" */}
+            <motion.div
+              className="section left-align"
+              initial="hiddenLeft"
+              animate={isVisible ? "visibleLeft" : "hiddenLeft"}
+              variants={cardZigZagVariants}
+              custom={1}
+            >
+              <h3>Cosa faccio</h3>
+              <p>
+                Mi occupo dello sviluppo completo di applicazioni web, partendo
+                dalla progettazione dell'interfaccia utente (frontend) fino alla
+                logica del server e alla gestione dei dati (backend). Ho
+                consolidato le mie competenze attraverso la realizzazione di
+                diversi progetti personali, che mi hanno permesso di esplorare e
+                padroneggiare le tecnologie più innovative del settore.
+              </p>
+            </motion.div>
+            <img
+              src="/images/Adobe Express - file (3).png"
+              alt=""
+              className="image-cosa"
+            />
+          </div>
           {/* Card "La mia filosofia" */}
           <motion.div
             className="section right-align"
