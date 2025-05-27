@@ -15,79 +15,107 @@ interface SkillGroup {
 
 const skillsData: SkillGroup[] = [
   {
-    title: "Frontend Development",
+    title: "Sviluppo Frontend",
     skills: [
       {
         name: "HTML5",
         description:
-          "Linguaggio standard usato per creare e strutturare il contenuto delle pagine web.",
+          "Il fondamento del web! Uso HTML5 per strutturare contenuti chiari e accessibili, garantendo una base solida per ogni applicazione.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png",
       },
       {
         name: "CSS",
         description:
-          "Linguaggio usato per descrivere la presentazione e lo stile di un documento scritto in HTML.",
+          "Trasformo il design in realtà. Con CSS, do vita alle tue idee, creando interfacce utente eleganti e responsive che si adattano a ogni dispositivo.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
       },
       {
         name: "JavaScript",
         description:
-          "Linguaggio di programmazione versatile e leggero, principalmente utilizzato per rendere le pagine web interattive e dinamiche.",
+          "Il motore dell'interattività. Implemento logiche complesse e funzionalità dinamiche per rendere le applicazioni fluide e coinvolgenti.",
         imageUrl:
           "https://wpguru.co.uk/wp-content/uploads/2013/09/Javascript-Logo.png",
       },
       {
         name: "TypeScript",
         description:
-          "Superset di JavaScript che aggiunge funzionalità avanzate al linguaggio.",
+          "Aggiungo robustezza al codice. Con TypeScript, sviluppo applicazioni più sicure, scalabili e facili da manutenere, riducendo gli errori e migliorando la collaborazione.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
       },
       {
         name: "React",
         description:
-          "Libreria JavaScript open-source per la costruzione di interfacce utente (UI) complesse, dinamiche e altamente performanti",
+          "Costruisco interfacce utente moderne e performanti. Sfrutto la potenza di React per creare componenti riutilizzabili e architetture scalabili, ottimizzando lo sviluppo e l'esperienza utente.",
         imageUrl:
           "https://static-00.iconduck.com/assets.00/react-original-wordmark-icon-1679x2048-hjal07w8.png",
+      },
+      {
+        name: "SCSS",
+        description:
+          "Potenzio il CSS con funzionalità avanzate. SCSS mi permette di scrivere stili più organizzati, modulari e manutenibili, accelerando il processo di design.",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Sass_Logo_Color.svg/2560px-Sass_Logo_Color.svg.png",
       },
     ],
   },
   {
-    title: "Backend Development",
+    title: "Sviluppo Backend",
     skills: [
       {
         name: "Node.js",
         description:
-          "Permette agli sviluppatori di usare un unico linguaggio (JavaScript) per l'intera applpicazione e di creare applicazioni web scalabili, veloci e in tempo reale.",
+          "Costruisco il cuore delle applicazioni. Con Node.js, creo API robuste e scalabili, gestendo la logica server-side e l'interazione con i database per un'esperienza utente fluida.",
         imageUrl:
           "https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png",
+      },
+      {
+        name: "Python",
+        description:
+          "Sfrutto la versatilità di Python per lo sviluppo backend, automazione e analisi dati, creando soluzioni efficienti e potenti per ogni esigenza.",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
       },
     ],
   },
   {
-    title: "Tools & Technologies",
+    title: "Strumenti e Tecnologie",
     skills: [
       {
         name: "Git",
         description:
-          "Garantisce una collaborazione efficiente, tracciabilità e la possibilità di gestire complesse evoluzioni di un progetto.",
+          "Garantisco una collaborazione efficiente e un controllo totale delle versioni del codice, essenziale per team di sviluppo agili e progetti complessi.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png",
       },
       {
+        name: "GitHub",
+        description:
+          "Non solo controllo versione, ma anche piattaforma di collaborazione. Uso GitHub per gestire repository, revisioni di codice e contribuire a progetti open-source, garantendo trasparenza e organizzazione.",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png",
+      },
+      {
         name: "npm",
         description:
-          "Essenziale per lo sviluppo JavaScript moderno, semplificando la condivisione del codice e l'automazione dei flussi di lavoro",
+          "Essenziale per lo sviluppo JavaScript moderno, semplifico la gestione delle dipendenze e l'automazione dei flussi di lavoro, per un'efficienza senza pari.",
         imageUrl: "https://img.icons8.com/?size=96&id=24895&format=png",
       },
       {
         name: "VS Code",
         description:
-          "Strumento potente e flessibile che offre un'esperienza di sviluppo efficiente e personalizzabile per un'ampia gamma di progetti.",
+          "Il mio ambiente di sviluppo preferito: potente, personalizzabile e ricco di estensioni. Massimizzo la produttività e la qualità del codice con un editor che si adatta alle mie esigenze.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519",
+      },
+      {
+        name: "Linux",
+        description:
+          "Sfrutto la potenza e la flessibilità di Linux come ambiente di sviluppo, garantendo stabilità e controllo per ogni progetto.",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/1200px-Tux.svg.png",
       },
       {
         name: "Figma",
@@ -113,10 +141,10 @@ const About = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const sentences = [
-    "Sono un UX / UI Designer con soluzioni innovative e grafiche per i tuoi prodotti.",
-    "Creo esperienze utente coinvolgenti e intuitive.",
-    "Il mio obiettivo è trasformare le idee in realtà digitali.",
-    "Passionato di design e tecnologia, sempre alla ricerca di nuove sfide.",
+    "Trasformo idee in esperienze digitali innovative.",
+    "Sviluppo soluzioni web dinamiche e coinvolgenti.",
+    "Ogni riga di codice, una soluzione su misura per te.",
+    "Porto la tua visione sul web con passione e precisione.",
   ];
 
   const [showImages, setShowImages] = useState(false);
@@ -193,20 +221,14 @@ const About = () => {
   ]);
 
   const toggleSkillDescription = (skillName: string, groupTitle: string) => {
-    // Determina il nuovo stato per la skill espansa
     const newExpandedSkill = expandedSkill === skillName ? null : skillName;
     setExpandedSkill(newExpandedSkill);
 
-    // Gestisce lo stato del gruppo espanso
     if (newExpandedSkill === null) {
-      // Se stiamo chiudendo una skill (newExpandedSkill è null)
-      // e il gruppo corrente era quello della skill chiusa, allora chiudi anche il gruppo.
       if (expandedGroup === groupTitle) {
         setExpandedGroup(null);
       }
     } else {
-      // Se stiamo aprendo una nuova skill (newExpandedSkill non è null),
-      // assicurati che il suo gruppo sia aperto.
       setExpandedGroup(groupTitle);
     }
   };
@@ -234,7 +256,6 @@ const About = () => {
     },
   };
 
-  // Varianze per l'animazione a zig-zag delle card
   const cardZigZagVariants = {
     hiddenLeft: { opacity: 0, x: -100 },
     visibleLeft: {
@@ -262,10 +283,10 @@ const About = () => {
   };
 
   const descriptionVariants = {
-    initial: { opacity: 0, maxHeight: 0 }, // Inizia con max-height: 0
+    initial: { opacity: 0, maxHeight: 0 },
     animate: {
       opacity: 1,
-      maxHeight: "500px", // Un valore sufficientemente grande per contenere qualsiasi descrizione
+      maxHeight: "500px",
       transition: {
         maxHeight: { duration: 0.4, ease: "easeInOut" },
         opacity: { duration: 0.2, delay: 0.1 },
@@ -273,7 +294,7 @@ const About = () => {
     },
     exit: {
       opacity: 0,
-      maxHeight: 0, // Torna a max-height: 0 in uscita
+      maxHeight: 0,
       transition: {
         maxHeight: { duration: 0.4, ease: "easeInOut" },
         opacity: { duration: 0.2 },
@@ -293,7 +314,7 @@ const About = () => {
         variants={headingVariants}
       >
         <motion.h1 variants={headingVariants}>
-          Benvenuto nel mio mondo!
+          La mia storia, la tua soluzione.
         </motion.h1>
         <motion.p variants={subtitleVariants} className="subtitle">
           {currentText}
@@ -302,30 +323,28 @@ const About = () => {
 
       <div className="container">
         <motion.div
-          className="about-content" // Questo è il genitore Flexbox per le card
-          initial="hidden" // Puoi rimuovere questa animazione generale se non la vuoi sulle card all'inizio
+          className="about-content"
+          initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
-          // variants={textVariants} // Questa variante potrebbe causare conflitti, meglio rimuoverla o ridefinirla
         >
-          {/* Card "Chi sono" - allineata a sinistra */}
+          {/* Card "Chi sono" */}
           <motion.div
             className="section right-align"
             initial="hiddenLeft"
             animate={isVisible ? "visibleLeft" : "hiddenLeft"}
             variants={cardZigZagVariants}
-            custom={0} // Custom prop per lo staggered delay se vuoi, ma con i variants diretti non è sempre necessario
+            custom={0}
           >
             <h3>Chi sono</h3>
             <p>
-              Ciao! Sono Alberto, uno sviluppatore web e UX/UI designer con sede
-              nella bellissima Bologna. La mia passione per la creazione di
-              esperienze digitali significative è nata dalla curiosità di
-              comprendere come la tecnologia possa migliorare la vita delle
-              persone.
+              Ciao! Sono Alberto, il tuo Web Developer! Ho da sempre una
+              passione per l'informatica e la creazione di applicazioni web. La
+              mia avventura nel mondo del codice è iniziata dalla curiosità di
+              dare vita a idee digitali, e da allora non mi sono più fermato!
             </p>
           </motion.div>
 
-          {/* Card "Il mio percorso" - allineata a sinistra */}
+          {/* Card "Cosa faccio" */}
           <motion.div
             className="section left-align"
             initial="hiddenLeft"
@@ -333,20 +352,18 @@ const About = () => {
             variants={cardZigZagVariants}
             custom={1}
           >
-            <h3>Il mio percorso</h3>
+            <h3>Cosa faccio</h3>
             <p>
-              Il mio percorso nel mondo del web è iniziato con lo studio
-              autonomo e la realizzazione di progetti personali focalizzati
-              sullo sviluppo frontend. Da allora, ho avuto l'opportunità di
-              lavorare su diversi progetti, sia personali che collaborativi, che
-              mi hanno permesso di applicare e affinare le mie competenze in
-              vari contesti. Ogni esperienza mi ha fornito preziose competenze
-              nello sviluppo di interfacce utente interattive e nella creazione
-              di backend funzionali.
+              Mi occupo dello sviluppo completo di applicazioni web, partendo
+              dalla progettazione dell'interfaccia utente (frontend) fino alla
+              logica del server e alla gestione dei dati (backend). Ho
+              consolidato le mie competenze attraverso la realizzazione di
+              diversi progetti personali, che mi hanno permesso di esplorare e
+              padroneggiare le tecnologie più innovative del settore.
             </p>
           </motion.div>
 
-          {/* Card "La mia filosofia" - allineata a destra */}
+          {/* Card "La mia filosofia" */}
           <motion.div
             className="section right-align"
             initial="hiddenRight"
@@ -356,17 +373,16 @@ const About = () => {
           >
             <h3>La mia filosofia</h3>
             <p>
-              Credo fermamente che un buon design vada oltre l'estetica; deve
-              essere intuitivo, accessibile e centrato sull'utente. Il mio
-              approccio si basa sulla comprensione profonda delle esigenze degli
-              utenti e sulla creazione di soluzioni che siano al contempo
-              funzionali e visivamente accattivanti. Cerco sempre di iterare
-              rapidamente, testare le ipotesi con gli utenti e mantenere la
-              semplicità come principio guida.
+              Credo che il successo di un progetto si basi sull'innovazione,
+              sulla collaborazione e sulla formazione continua. Amo lavorare in
+              team e mettermi alla prova con sfide sempre più complesse, perché
+              è lì che le idee migliori prendono forma e la crescita
+              professionale accelera. Il mio obiettivo è portare valore e
+              qualità in ogni linea di codice.
             </p>
           </motion.div>
 
-          {/* Card "Cosa mi appassiona" - allineata a sinistra */}
+          {/* Card "Ciò che cerco" */}
           <motion.div
             className="section left-align"
             initial="hiddenLeft"
@@ -374,19 +390,14 @@ const About = () => {
             variants={cardZigZagVariants}
             custom={3}
           >
-            <h3>Cosa mi appassiona</h3>
+            <h3>Ciò che cerco</h3>
             <p>
-              Sono particolarmente entusiasta di esplorare nuove tecnologie e di
-              applicarle per risolvere problemi reali. Mi affascina il design di
-              interfacce complesse che semplificano l'interazione per l'utente e
-              lo sviluppo di applicazioni web performanti che offrano
-              un'esperienza utente fluida e reattiva. Trovo stimolante il
-              continuo apprendimento e la sfida di rimanere aggiornato con le
-              ultime tendenze del settore.
+              Il mio scopo è quello di contribuire a soluzioni tech innovative
+              per crescere professionalmente e lasciare il mio segno.
             </p>
           </motion.div>
 
-          {/* Card "Guardando al futuro" - allineata a destra */}
+          {/* Card "Oltre il codice" */}
           <motion.div
             className="section right-align"
             initial="hiddenRight"
@@ -394,14 +405,13 @@ const About = () => {
             variants={cardZigZagVariants}
             custom={4}
           >
-            <h3>Guardando al futuro</h3>
+            <h3>Oltre il codice</h3>
             <p>
-              Sono sempre alla ricerca di nuove sfide e opportunità per crescere
-              professionalmente e contribuire a progetti stimolanti. Il mio
-              obiettivo è continuare ad approfondire le mie competenze in React
-              e Node.js, esplorare nuove librerie e framework, e collaborare con
-              team innovativi per creare prodotti che abbiano un impatto
-              positivo sulla vita delle persone.
+              Fuori dalla programmazione, la mia curiosità mi spinge a esplorare
+              tematiche legate alla leadership, alle strategie aziendali
+              innovative e ai processi di crescita. Cerco di ampliare la mia
+              visione su come l'innovazione possa trasformare il mondo, principi
+              che amo applicare anche al mio lavoro di sviluppatore.
             </p>
           </motion.div>
 
@@ -414,12 +424,11 @@ const About = () => {
               margin: "40px auto 0",
             }}
           >
-            In questo portfolio, puoi trovare alcuni dei progetti su cui ho
-            lavorato. Spero che ti diano un'idea della mia passione e delle mie
-            capacità.
+            Esplora il mio portfolio per scoprire i progetti che ho realizzato.
+            Sono pronto a trasformare le tue idee in realtà!
           </p>
         </motion.div>
-
+        ---
         <div className="skills">
           <h4 className="skills-title">Le mie competenze</h4>
           <div className="toggle">
@@ -440,7 +449,12 @@ const About = () => {
           </div>
 
           {skillsData.map((group) => (
-            <div className="skills-group" key={group.title}>
+            <motion.div
+              className="skills-group"
+              key={group.title}
+              layout
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
               <h4>{group.title}</h4>
               <div className="skills-row">
                 {group.skills.map((skill, index) => {
@@ -480,7 +494,6 @@ const About = () => {
               </div>
 
               <AnimatePresence>
-                {/* Mostra la descrizione solo se expandedGroup corrisponde E expandedSkill non è null */}
                 {expandedGroup === group.title && expandedSkill && (
                   <motion.div
                     className="skill-description"
@@ -494,10 +507,10 @@ const About = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           ))}
         </div>
-
+        ---
         <div className="why-me">
           <button className="why-me-button">Perché scegliere me</button>
           <div className="why-me-title">
@@ -505,34 +518,34 @@ const About = () => {
               <span>Perché io come</span>
               <span style={{ color: "#83858D" }}> Web Developer</span>
             </h2>
-            <p>Why Partner with Me for the Design Excellence</p>
+            <p>Why Partner with Me for Design Excellence</p>
           </div>
           <div className="why-me-cards">
-            <h2>Senior Designer.</h2>
+            <h2>Competenza Certificata</h2>
             <p>
-              Experience and expertise at your fingertips, ensuring exceptional
-              design quality.
+              Esperienza e competenza a tua disposizione, garantendo una qualità
+              di sviluppo eccezionale.
             </p>
           </div>
           <div className="why-me-cards">
-            <h2>Senior Designer.</h2>
+            <h2>Approccio Orientato al Problema</h2>
             <p>
-              Experience and expertise at your fingertips, ensuring exceptional
-              design quality.
+              Non mi limito a scrivere codice, ma risolvo problemi complessi con
+              soluzioni innovative e scalabili.
             </p>
           </div>
           <div className="why-me-cards">
-            <h2>Senior Designer.</h2>
+            <h2>Passione e Aggiornamento Continuo</h2>
             <p>
-              Experience and expertise at your fingertips, ensuring exceptional
-              design quality.
+              Sempre all'avanguardia sulle ultime tecnologie e tendenze del
+              mercato, per offrirti soluzioni moderne e competitive.
             </p>
           </div>
           <div className="why-me-cards">
-            <h2>Senior Designer.</h2>
+            <h2>Collaborazione e Crescita</h2>
             <p>
-              Experience and expertise at your fingertips, ensuring exceptional
-              design quality.
+              Amo lavorare in team, contribuire attivamente e imparare da ogni
+              nuova sfida per superare le aspettative.
             </p>
           </div>
         </div>
