@@ -21,35 +21,35 @@ const skillsData: SkillGroup[] = [
       {
         name: "HTML5",
         description:
-          "Conoscenza approfondita della struttura semantica del web e delle sue potenzialità per l'accessibilità.",
+          "Linguaggio standard usato per creare e strutturare il contenuto delle pagine web.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png",
       },
       {
         name: "CSS",
         description:
-          "Styling avanzato con layout flessibili (Flexbox e Grid), responsive design per diverse risoluzioni e familiarità con pre-processori come Sass.",
+          "Linguaggio usato per descrivere la presentazione e lo stile di un documento scritto in HTML.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
       },
       {
         name: "JavaScript",
         description:
-          "Programmazione dinamica, manipolazione del DOM (Document Object Model), gestione di eventi e conoscenza dei concetti di programmazione asincrona.",
+          "Linguaggio di programmazione versatile e leggero, principalmente utilizzato per rendere le pagine web interattive e dinamiche.",
         imageUrl:
           "https://wpguru.co.uk/wp-content/uploads/2013/09/Javascript-Logo.png",
       },
       {
         name: "TypeScript",
         description:
-          "Sviluppo di applicazioni scalabili e manutenibili con tipizzazione statica, sfruttando le funzionalità del linguaggio per migliorare la qualità del codice.",
+          "Superset di JavaScript che aggiunge funzionalità avanzate al linguaggio.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
       },
       {
         name: "React",
         description:
-          "Esperienza nello sviluppo di interfacce utente dinamiche e reattive utilizzando React, la sua libreria di componenti, Hooks e gestione dello stato (es. Context API, Redux - conoscenza di base).",
+          "Libreria JavaScript open-source per la costruzione di interfacce utente (UI) complesse, dinamiche e altamente performanti",
         imageUrl:
           "https://static-00.iconduck.com/assets.00/react-original-wordmark-icon-1679x2048-hjal07w8.png",
       },
@@ -61,7 +61,7 @@ const skillsData: SkillGroup[] = [
       {
         name: "Node.js",
         description:
-          "Sviluppo di applicazioni lato server con JavaScript e l'ecosistema Node.js, creazione di API RESTful e gestione di database (es. MongoDB, PostgreSQL - conoscenza di base).",
+          "Permette agli sviluppatori di usare un unico linguaggio (JavaScript) per l'intera applpicazione e di creare applicazioni web scalabili, veloci e in tempo reale.",
         imageUrl:
           "https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png",
       },
@@ -73,20 +73,20 @@ const skillsData: SkillGroup[] = [
       {
         name: "Git",
         description:
-          "Controllo di versione distribuito per la gestione del codice sorgente, collaborazione in team e gestione di branch.",
+          "Garantisce una collaborazione efficiente, tracciabilità e la possibilità di gestire complesse evoluzioni di un progetto.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png",
       },
       {
         name: "npm",
         description:
-          "Gestione delle dipendenze e dei pacchetti per progetti JavaScript.",
+          "Essenziale per lo sviluppo JavaScript moderno, semplificando la condivisione del codice e l'automazione dei flussi di lavoro",
         imageUrl: "https://img.icons8.com/?size=96&id=24895&format=png",
       },
       {
         name: "VS Code",
         description:
-          "Ambiente di sviluppo integrato con funzionalità avanzate per la produttività.",
+          "Strumento potente e flessibile che offre un'esperienza di sviluppo efficiente e personalizzabile per un'ampia gamma di progetti.",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519",
       },
@@ -109,8 +109,8 @@ const About = () => {
   const [currentText, setCurrentText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(50);
-  const [pauseDuration, setPauseDuration] = useState(2000);
+  const [typingSpeed] = useState(50);
+  const [pauseDuration] = useState(2000);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const sentences = [
@@ -121,6 +121,7 @@ const About = () => {
   ];
 
   const [showImages, setShowImages] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [togglePosition, setTogglePosition] = useState("text");
 
   useEffect(() => {
