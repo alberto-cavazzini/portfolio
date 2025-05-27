@@ -444,7 +444,7 @@ const About = () => {
               className="portfolio-cta-text"
               style={{
                 color: "#83858D",
-                fontSize: "12px",
+                fontSize: "13px",
               }}
             >
               Esplora il mio portfolio per scoprire i progetti che ho
@@ -453,7 +453,14 @@ const About = () => {
           </div>
         </motion.div>
         <div className="skills">
-          <h4 className="skills-title">Le mie competenze</h4>
+          <h4
+            className="skills-title"
+            style={{
+              fontSize: "30px",
+            }}
+          >
+            Le mie competenze
+          </h4>
           <div className="toggle">
             <div className="toggle-container">
               <button

@@ -35,12 +35,12 @@ function Footer() {
 
           {/* Aggiunta la classe 'github-button' per stili specifici */}
           <button onClick={handleGitHubClick} className="github-button">
-            <img src="/images/icons8-github-512.png" alt="GitHub" />
+            <img src="/images/github-icon.png" alt="GitHub" />
           </button>
 
           {/* Aggiunta la classe 'mail-button' per stili specifici */}
           <button onClick={handleMailClick} className="mail-button">
-            <img src="/images/icons8-apple-mail-480.png" alt="Mail" />
+            <img src="/images/mail-icon.png" alt="Mail" />
           </button>
 
           <button onClick={handleWhatsappClick}>

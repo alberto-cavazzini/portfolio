@@ -62,7 +62,6 @@
   gap: 40px;
   padding: 0 20px;
   box-sizing: border-box;
-  margin-bottom: 50px;
 }
 
 .section {
@@ -120,7 +119,6 @@
 
 /* --- Sezione Competenze (Skills) --- */
 .skills {
-  margin-top: 30px;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -132,7 +130,7 @@
 }
 
 .skills h4 {
-  font-size: 25px;
+  font-size: 23px;
   color: #ffff;
   margin-bottom: 20px;
   font-weight: bold;
@@ -405,21 +403,22 @@
 }
 
 .portfolio-cta {
-  display: flex;
-  margin-bottom: 100px;
+  display: flex; /* Utilizza Flexbox per il contenitore */
+  justify-content: center; /* Centra orizzontalmente i suoi elementi figli */
+  width: 100%; /* Assicura che occupi l'intera larghezza disponibile */
+  margin-bottom: 50px;
+  border-bottom: 0.9px solid #222222;
 }
 
 .portfolio-cta-text {
   text-align: center;
   max-width: 800px; /* Limita la larghezza massima del testo */
-  margin: 40px auto 0; /* Centra il blocco e aggiunge margine superiore */
+  margin: 40px auto 0; /* Questo ora centra il testo *all'interno* del suo div parent se il testo è più stretto del div. */
   background-color: #450A05;
-  /* Proprietà per il bordo che si adatta al contenuto */
-  display: inline-block; /* Rende il blocco "inline" ma permette di impostare larghezza/altezza e margini */
-  border: 0.9px solid #FF4F0F; /* Esempio di bordo: 1px solido, colore grigio chiaro */
-  padding: 10px 15px; /* Spazio interno tra testo e bordo */
-  border-radius: 5px; /* Bordi leggermente arrotondati (opzionale) */
-  box-sizing: border-box; /* Assicura che padding e border siano inclusi nella larghezza/altezza totale */
+  border: 0.9px solid #FF4F0F;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 /* --- Media Queries --- */
