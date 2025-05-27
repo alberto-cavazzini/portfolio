@@ -71,8 +71,8 @@
   align-items: flex-start;
   background-color: #0e0e0e;
   height: auto;
-  max-width: 400px;
-  padding: 0px 10px;
+  max-width: 450px; /* Aumentato leggermente */
+  padding: 20px; /* Aumentato leggermente */
   text-align: left;
   border: 0.9px solid #222222;
   border-radius: 15px;
@@ -81,12 +81,9 @@
   margin: 0;
 }
 
-.section.right-align {
-  align-self: flex-end;
-}
-
+.section.right-align,
 .section.left-align {
-  align-self: flex-start;
+  align-self: center; /* Centrato di default */
 }
 
 .section p,
@@ -365,55 +362,53 @@
   font-weight: 200;
 }
 
-.image-chisono {
-  width: 550px;
-  height: auto;
-  margin-bottom: -85px;
-  margin-left: -50px;
-}
-
-.image-cosa {
-  width: 550px;
-  height: auto;
-  margin-bottom: -85px;
-  margin-right: -50px;
-}
-
-.image-filosofia {
-  width: 550px;
-  height: auto;
-  margin-bottom: -40px;
-  margin-right: -50px;
-}
-
-.intro-flex-container{
+/* FLESSIBILIZZAZIONE DEI CONTENITORI INTRODUZIONE */
+.intro-flex-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Default per desktop */
   align-items: center;
-  gap: 200px;
-  padding-bottom: 100px;
+  gap: 80px; /* Riduci il gap per avere più spazio */
+  padding-bottom: 50px;
+  flex-wrap: wrap; /* Permette agli elementi di andare a capo */
+  justify-content: center; /* Centra gli elementi quando vanno a capo */
   border-bottom: 0.9px solid #222222;
 }
 
 .last-intro-flex-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Default per desktop */
   align-items: center;
-  gap: 200px;
+  gap: 80px; /* Riduci il gap per avere più spazio */
+  padding-bottom: 50px;
+  flex-wrap: wrap; /* Permette agli elementi di andare a capo */
+  justify-content: center; /* Centra gli elementi quando vanno a capo */
 }
 
+/* RIMOZIONE MARGINI NEGATIVI E FLESSIBILIZZAZIONE IMMAGINI */
+.image-chisono,
+.image-cosa,
+.image-filosofia {
+  width: 40vw; /* Usa la larghezza della viewport per fluidità */
+  max-width: 450px; /* Limita la dimensione massima per desktop */
+  height: auto;
+  margin-bottom: 0; /* Rimuovi margini negativi */
+  margin-left: 0; /* Rimuovi margini negativi */
+  margin-right: 0; /* Rimuovi margini negativi */
+}
+
+
 .portfolio-cta {
-  display: flex; /* Utilizza Flexbox per il contenitore */
-  justify-content: center; /* Centra orizzontalmente i suoi elementi figli */
-  width: 100%; /* Assicura che occupi l'intera larghezza disponibile */
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin-bottom: 50px;
   border-bottom: 0.9px solid #222222;
 }
 
 .portfolio-cta-text {
   text-align: center;
-  max-width: 800px; /* Limita la larghezza massima del testo */
-  margin: 40px auto 0; /* Questo ora centra il testo *all'interno* del suo div parent se il testo è più stretto del div. */
+  max-width: 800px;
+  margin: 40px auto 0;
   background-color: #450A05;
   border: 0.9px solid #FF4F0F;
   padding: 10px 15px;
@@ -423,88 +418,138 @@
 
 /* --- Media Queries --- */
 
-
 @media (max-width: 1024px) {
-  .image-cosa, .image-chisono {
-    width: 40vw; /* Usa la larghezza della viewport per fluidità */
-    max-width: 400px; /* Limita la dimensione massima */
-  }
-}
-
-@media (max-width: 768px) {
-  .image-cosa, .image-chisono {
-    width: 70vw; /* Più grande su mobile */
-    max-width: 300px; /* Limita la dimensione massima su mobile */
-    margin: 0 auto; /* Centra l'immagine se è da sola */
-    display: block; /* Assicurati che sia un blocco per il margin auto */
+  /* Assicurati che i container flex vadano a capo per tablet */
+  .intro-flex-container,
+  .last-intro-flex-container {
+    flex-direction: column; /* Imposta a colonna per schermi più piccoli */
+    gap: 50px; /* Riduci il gap */
+    padding-bottom: 50px;
   }
 
-  .intro-flex-container{
-    flex-direction: column;
-    align-items: center;
-    gap: 100px;
-    margin-bottom: 100px;
-}
-}
-@media (max-width: 768px) {
-  .skills {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  .image-cosa,
+  .image-chisono,
+  .image-filosofia {
+    width: 60vw; /* Più grande su tablet */
+    max-width: 400px; /* Limita la dimensione massima su tablet */
+    margin: 0 auto; /* Centra le immagini */
+    order: 1; /* Le immagini appaiono prima del testo nelle sezioni */
   }
 
-  .skills-group {
-    width: 90%;
-    max-width: 400px;
-  }
-
-  .skills-group .skills-row {
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .skills-group .skill-item {
-    font-size: 0.9em;
-    padding: 8px 16px;
+  /* Le sezioni di testo appaiono dopo l'immagine */
+  .section {
+    max-width: 90%; /* Occupa più larghezza su tablet */
+    order: 2;
+    margin: 0 auto; /* Centra le card */
+    padding: 15px; /* Riduci leggermente il padding */
   }
 
   .about-content {
-    align-items: center;
-    padding: 0 10px;
-    gap: 30px;
+    padding: 0 10px; /* Riduci il padding generale */
+  }
+
+  .background-heading h1 {
+    font-size: 3em; /* Riduci la dimensione del titolo principale */
+  }
+
+  .subtitle {
+    font-size: 1.1em; /* Riduci la dimensione del sottotitolo */
+  }
+
+  .skills-group {
+    min-width: unset; /* Rimuovi il min-width per maggiore flessibilità */
+    width: 48%; /* Due colonne per tablet, con gap */
+    max-width: unset; /* Rimuovi max-width, la width % lo gestisce */
+  }
+
+  .why-me-cards {
+    width: 90%; /* Occupano più spazio */
+  }
+}
+
+@media (max-width: 768px) {
+  .background-heading h1 {
+    font-size: 2.5em; /* Ulteriore riduzione del titolo */
+  }
+
+  .subtitle {
+    font-size: 1em; /* Ulteriore riduzione del sottotitolo */
+  }
+
+  .about .container {
+    padding: 0px 15px 15px 15px; /* Riduci il padding del container principale */
+  }
+
+  .about-content {
+    gap: 20px; /* Riduci ulteriormente il gap */
+  }
+
+  .intro-flex-container,
+  .last-intro-flex-container {
+    gap: 30px; /* Riduci il gap per mobile */
+    padding-bottom: 50px;
+    border-bottom: none; /* Rimuovi il bordo tra le sezioni su mobile, se preferisci */
+    margin-bottom: 30px; /* Riduci il margine inferiore */
+  }
+
+  /* Riaggiungi il border-bottom specifico per le sezioni che lo necessitano */
+  .intro-flex-container:not(:last-of-type) {
+    border-bottom: 0.9px solid #222222;
+  }
+  .last-intro-flex-container {
+      border-bottom: 0.9px solid #222222; /* Se vuoi il bordo anche sotto l'ultima sezione */
+      padding-bottom: 50px;
+  }
+
+  .image-cosa,
+  .image-chisono,
+  .image-filosofia {
+    width: 85vw; /* Occupa quasi tutta la larghezza dello schermo */
+    max-width: 350px; /* Limite massimo per evitare immagini troppo grandi */
+    margin-bottom: 0; /* Rimuovi i margini negativi */
+    margin: 0 auto; /* Centra l'immagine */
   }
 
   .section {
-    max-width: 90%;
-    margin: 0 auto;
+    max-width: 100%; /* Occupa l'intera larghezza disponibile */
+    padding: 10px; /* Riduci il padding */
   }
 
-  .section.right-align,
-  .section.left-align {
-    align-self: center;
+  .about-content h2 {
+    font-size: 2em;
   }
 
-  .personal-details {
-    align-items: center;
-    text-align: center;
+  .about-content h3 {
+    font-size: 1.5em;
   }
 
-  /* Why me media query adjustments */
-  .why-me {
-    padding: 15px;
+  .about-content p {
+    font-size: 0.95em;
   }
 
-  .why-me-button {
-    font-size: 0.9em;
+  .skills {
+    flex-direction: column; /* Una colonna per mobile */
+    gap: 15px;
+  }
+
+  .skills-group {
+    width: 95%; /* Occupa quasi tutta la larghezza */
+    max-width: 400px; /* Mantiene un limite sensato */
+  }
+
+  .toggle-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    width: 45px; /* Riduci la dimensione dei pulsanti toggle */
+    height: 45px;
   }
 
   .why-me-title h2 {
-    font-size: 35px;
+    font-size: 40px; /* Riduci la dimensione del titolo "Why me" */
   }
 
   .why-me-cards {
     width: 90%;
-    padding: 15px;
   }
 
   .why-me-cards h2 {
@@ -513,53 +558,34 @@
 }
 
 @media (max-width: 480px) {
-  .skills {
-    gap: 15px;
+  .background-heading h1 {
+    font-size: 2em; /* Ulteriore riduzione per schermi molto piccoli */
   }
 
-  .skills-group {
-    width: 100%;
-    padding: 15px;
+  .subtitle {
+    font-size: 0.9em;
   }
 
-  .skills-group .skill-item {
-    font-size: 0.85em;
-    padding: 6px 12px;
-  }
-
-  .about-content h2 {
-    font-size: 2.2em;
-  }
-
-  .about-content h3 {
-    font-size: 1.6em;
-  }
-
-  .about-content p {
-    font-size: 1em;
-    line-height: 1.6;
-  }
-
-  .personal-details li {
-    font-size: 1em;
-  }
-
-  /* Why me media query adjustments */
-  .why-me {
-    padding: 10px;
+  .image-cosa,
+  .image-chisono,
+  .image-filosofia {
+    width: 90vw; /* Quasi a piena larghezza */
   }
 
   .why-me-title h2 {
-    font-size: 25px;
+    font-size: 30px; /* Ulteriore riduzione del titolo "Why me" */
   }
 
   .why-me-cards {
-    width: 100%;
-    padding: 10px;
+    width: 95%;
   }
 
   .why-me-cards h2 {
     font-size: 1.2em;
   }
-}
 
+  .skills-group .skill-item {
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+}
