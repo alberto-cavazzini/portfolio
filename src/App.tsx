@@ -6,6 +6,7 @@ import Projects from "./pages/Projects";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; // Importa il componente Footer
 import ScrollToTopButton from "./components/ScrollToTopButton"; // Importa il nuovo componente TSX
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div>
         <Navbar resumeUrl={resumeUrl} />
         <Routes>
