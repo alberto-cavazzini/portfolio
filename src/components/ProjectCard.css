@@ -1,6 +1,6 @@
 .project-card {
   background-color: #0e0e0e;
-  border: 0.9px solid #222222;  
+  border: 0.9px solid #0F83FF;  
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -57,9 +57,9 @@
 }
 
 .project-card .project-links a:hover {
-  background-color: #007bff;
+  background-color: #6210E5;
   color: white;
-  border-color: #007bff;
+  border-color: #6210E5;
 }
 
 .project-card .project-info {
