@@ -7,13 +7,19 @@ function Contact() {
       <p>
         Sentiti libero di contattarmi per qualsiasi domanda, opportunità di
         collaborazione o semplicemente per un saluto! Puoi trovarmi su{" "}
-        <a href="https://www.linkedin.com/in/albertocavazzini/">Linkedin</a>
+        <a
+          href="https://www.linkedin.com/in/albertocavazzini/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Linkedin
+        </a>
       </p>
       <div className="container">
         <h3>Oppure, inviami un messaggio:</h3>
         <form
           className="contact-form"
-          action="[IL TUO ENDPOINT URL DI FORMSPREE]"
+          action="https://formspree.io/f/mgvkzqrr"
           method="POST"
         >
           <div className="form-group">

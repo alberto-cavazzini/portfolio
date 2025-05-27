@@ -368,78 +368,90 @@ const About = () => {
                 padroneggiare le tecnologie più innovative del settore.
               </p>
             </motion.div>
+
             <img
               src="/images/Adobe Express - file (3).png"
               alt=""
               className="image-cosa"
             />
           </div>
-          {/* Card "La mia filosofia" */}
-          <motion.div
-            className="section right-align"
-            initial="hiddenRight"
-            animate={isVisible ? "visibleRight" : "hiddenRight"}
-            variants={cardZigZagVariants}
-            custom={2}
-          >
-            <h3>La mia filosofia</h3>
-            <p>
-              Credo che il successo di un progetto si basi sull'innovazione,
-              sulla collaborazione e sulla formazione continua. Amo lavorare in
-              team e mettermi alla prova con sfide sempre più complesse, perché
-              è lì che le idee migliori prendono forma e la crescita
-              professionale accelera. Il mio obiettivo è portare valore e
-              qualità in ogni linea di codice.
-            </p>
-          </motion.div>
+          <div className="intro-flex-container">
+            <img
+              src="/images/Adobe Express - file (4).png"
+              alt=""
+              className="image-filosofia"
+            />
+            {/* Card "La mia filosofia" */}
+            <motion.div
+              className="section right-align"
+              initial="hiddenRight"
+              animate={isVisible ? "visibleRight" : "hiddenRight"}
+              variants={cardZigZagVariants}
+              custom={2}
+            >
+              <h3>La mia filosofia</h3>
+              <p>
+                Credo che il successo di un progetto si basi sull'innovazione,
+                sulla collaborazione e sulla formazione continua. Amo lavorare
+                in team e mettermi alla prova con sfide sempre più complesse,
+                perché è lì che le idee migliori prendono forma e la crescita
+                professionale accelera. Il mio obiettivo è portare valore e
+                qualità in ogni linea di codice.
+              </p>
+            </motion.div>
+          </div>
+          <div className="last-intro-flex-container">
+            <div>
+              {/* Card "Ciò che cerco" */}
+              <motion.div
+                className="section left-align"
+                initial="hiddenLeft"
+                animate={isVisible ? "visibleLeft" : "hiddenLeft"}
+                variants={cardZigZagVariants}
+                custom={3}
+              >
+                <h3>Ciò che cerco</h3>
+                <p>
+                  Il mio scopo è quello di contribuire a soluzioni tech
+                  innovative per crescere professionalmente e lasciare il mio
+                  segno.
+                </p>
+              </motion.div>
+            </div>
 
-          {/* Card "Ciò che cerco" */}
-          <motion.div
-            className="section left-align"
-            initial="hiddenLeft"
-            animate={isVisible ? "visibleLeft" : "hiddenLeft"}
-            variants={cardZigZagVariants}
-            custom={3}
-          >
-            <h3>Ciò che cerco</h3>
-            <p>
-              Il mio scopo è quello di contribuire a soluzioni tech innovative
-              per crescere professionalmente e lasciare il mio segno.
-            </p>
-          </motion.div>
-
-          {/* Card "Oltre il codice" */}
-          <motion.div
-            className="section right-align"
-            initial="hiddenRight"
-            animate={isVisible ? "visibleRight" : "hiddenRight"}
-            variants={cardZigZagVariants}
-            custom={4}
-          >
-            <h3>Oltre il codice</h3>
-            <p>
-              Fuori dalla programmazione, la mia curiosità mi spinge a esplorare
-              tematiche legate alla leadership, alle strategie aziendali
-              innovative e ai processi di crescita. Cerco di ampliare la mia
-              visione su come l'innovazione possa trasformare il mondo, principi
-              che amo applicare anche al mio lavoro di sviluppatore.
-            </p>
-          </motion.div>
-
+            {/* Card "Oltre il codice" */}
+            <motion.div
+              className="section right-align"
+              initial="hiddenRight"
+              animate={isVisible ? "visibleRight" : "hiddenRight"}
+              variants={cardZigZagVariants}
+              custom={4}
+            >
+              <h3>Oltre il codice</h3>
+              <p>
+                Fuori dalla programmazione, la mia curiosità mi spinge a
+                esplorare tematiche legate alla leadership, alle strategie
+                aziendali innovative e ai processi di crescita. Cerco di
+                ampliare la mia visione su come l'innovazione possa trasformare
+                il mondo, principi che amo applicare anche al mio lavoro di
+                sviluppatore.
+              </p>
+            </motion.div>
+          </div>
           {/* Paragrafo finale fuori dalle card */}
-          <p
-            style={{
-              color: "#d1d1d1",
-              textAlign: "center",
-              maxWidth: "800px",
-              margin: "40px auto 0",
-            }}
-          >
-            Esplora il mio portfolio per scoprire i progetti che ho realizzato.
-            Sono pronto a trasformare le tue idee in realtà!
-          </p>
+          <div className="portfolio-cta">
+            <p
+              className="portfolio-cta-text"
+              style={{
+                color: "#83858D",
+                fontSize: "12px",
+              }}
+            >
+              Esplora il mio portfolio per scoprire i progetti che ho
+              realizzato. Sono pronto a trasformare le tue idee in realtà!
+            </p>
+          </div>
         </motion.div>
-        ---
         <div className="skills">
           <h4 className="skills-title">Le mie competenze</h4>
           <div className="toggle">
@@ -521,7 +533,7 @@ const About = () => {
             </motion.div>
           ))}
         </div>
-        ---
+
         <div className="why-me">
           <button className="why-me-button">Perché scegliere me</button>
           <div className="why-me-title">

@@ -128,6 +128,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  margin-bottom: 100px;
 }
 
 .skills h4 {
@@ -316,7 +317,7 @@
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: 150px;
   background-color: #0e0e0e;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 }
@@ -380,12 +381,45 @@
   margin-right: -50px;
 }
 
+.image-filosofia {
+  width: 550px;
+  height: auto;
+  margin-bottom: -40px;
+  margin-right: -50px;
+}
+
 .intro-flex-container{
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 100px;
+  gap: 200px;
+  padding-bottom: 100px;
+  border-bottom: 0.9px solid #222222;
+}
+
+.last-intro-flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 200px;
+}
+
+.portfolio-cta {
+  display: flex;
   margin-bottom: 100px;
+}
+
+.portfolio-cta-text {
+  text-align: center;
+  max-width: 800px; /* Limita la larghezza massima del testo */
+  margin: 40px auto 0; /* Centra il blocco e aggiunge margine superiore */
+  background-color: #450A05;
+  /* Proprietà per il bordo che si adatta al contenuto */
+  display: inline-block; /* Rende il blocco "inline" ma permette di impostare larghezza/altezza e margini */
+  border: 0.9px solid #FF4F0F; /* Esempio di bordo: 1px solido, colore grigio chiaro */
+  padding: 10px 15px; /* Spazio interno tra testo e bordo */
+  border-radius: 5px; /* Bordi leggermente arrotondati (opzionale) */
+  box-sizing: border-box; /* Assicura che padding e border siano inclusi nella larghezza/altezza totale */
 }
 
 /* --- Media Queries --- */
