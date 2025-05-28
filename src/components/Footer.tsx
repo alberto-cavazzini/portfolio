@@ -79,7 +79,7 @@ function Footer() {
       <div className="container">
         <p className="copyright">
           &copy; {new Date().getFullYear()}{" "}
-          {process.env.REACT_APP_PORTFOLIO_NAME || "Il tuo Nome"}
+          {process.env.REACT_APP_PORTFOLIO_NAME || "Alberto Cavazzini"}
         </p>
       </div>
     </footer>
