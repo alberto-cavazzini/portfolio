@@ -21,7 +21,7 @@ const projects: Project[] = [
   {
     title: "App Meteo",
     description: "",
-    imageUrl: "/images/app-meteo.png",
+    imageUrl: process.env.PUBLIC_URL + "/images/app-meteo.png",
     id: "app-meteo",
     liveUrl: "https://alberto-cavazzini.github.io/app-meteo/",
     codeUrl: "https://github.com/alberto-cavazzini/app-meteo",
@@ -32,7 +32,7 @@ const projects: Project[] = [
   {
     title: "Pong Game",
     description: "",
-    imageUrl: "/images/pong.png",
+    imageUrl: process.env.PUBLIC_URL + "/images/pong.png",
     id: "pong-game",
     liveUrl: "https://alberto-cavazzini.github.io/pong-game/",
     codeUrl: "https://github.com/alberto-cavazzini/pong-game",
@@ -42,7 +42,7 @@ const projects: Project[] = [
   {
     title: "Snake Game",
     description: "",
-    imageUrl: "/images/snake.png", // Assicurati che l'immagine sia nella cartella public/images
+    imageUrl: process.env.PUBLIC_URL + "/images/snake.png", // Assicurati che l'immagine sia nella cartella public/images
     id: "snake-game",
     liveUrl: "https://alberto-cavazzini.github.io/snake-game/",
     codeUrl: "https://github.com/alberto-cavazzini/snake-game",
@@ -51,7 +51,7 @@ const projects: Project[] = [
   {
     title: "Tic Tac Toe",
     description: "",
-    imageUrl: "/images/tic-tac-toe.png", // Assicurati che l'immagine sia nella cartella public/images
+    imageUrl: process.env.PUBLIC_URL + "/images/tic-tac-toe.png", // Assicurati che l'immagine sia nella cartella public/images
     id: "tic-tac-toe",
     liveUrl: "https://alberto-cavazzini.github.io/TicTacToe-Game/",
     codeUrl: "https://github.com/alberto-cavazzini/TicTacToe-Game",
@@ -60,7 +60,7 @@ const projects: Project[] = [
   {
     title: "Stopwatch",
     description: "",
-    imageUrl: "/images/stopwatch.png", // Assicurati che l'immagine sia nella cartella public/images
+    imageUrl: process.env.PUBLIC_URL + "/images/stopwatch.png", // Assicurati che l'immagine sia nella cartella public/images
     id: "stopwatch",
     liveUrl: "https://alberto-cavazzini.github.io/stopwatch/",
     codeUrl: "https://github.com/alberto-cavazzini/stopwatch",
@@ -69,7 +69,7 @@ const projects: Project[] = [
   {
     title: "Youtube Clone",
     description: "",
-    imageUrl: "/images/youtube-clone.png", // Assicurati che l'immagine sia nella cartella public/images
+    imageUrl: process.env.PUBLIC_URL + "/images/youtube-clone.png", // Assicurati che l'immagine sia nella cartella public/images
     id: "youtube-clone",
     liveUrl: "https://alberto-cavazzini.github.io/Youtube-Clone/",
     codeUrl: "https://github.com/alberto-cavazzini/Youtube-Clone",

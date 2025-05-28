@@ -19,7 +19,8 @@ function Navbar({ resumeUrl }: NavbarProps) {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-          <img src="/images/logo.png" alt="logo" />
+          {/* MODIFICA QUI: Aggiungi process.env.PUBLIC_URL */}
+          <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" />
           {/* Ho avvolto il nome in uno span per poterlo nascondere specificatamente */}
           <Link to="/" className="logo-link">
             <span className="logo-name">Alberto Cavazzini</span>

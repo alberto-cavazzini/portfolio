@@ -1,60 +1,78 @@
+/* src/App.css */
+
+/* Stile generale per il container principale dell'app */
+.main-app-container {
+  display: flex; /* Attiva Flexbox */
+  flex-direction: column; /* Disponi gli elementi in colonna (Navbar, Content, Footer) */
+  min-height: 100vh; /* Garantisce che il container sia ALMENO alto quanto il viewport */
+}
+
+/* Questo wrapper si espanderà per occupare lo spazio disponibile, spingendo il footer in basso */
+.content-wrapper {
+  flex-grow: 1; /* Permette a questo div di "crescere" e prendere tutto lo spazio verticale rimanente */
+  /* Puoi aggiungere padding qui se necessario per il contenuto delle tue pagine */
+  padding-bottom: 50px; /* Esempio: aggiungi un po' di spazio sotto il contenuto prima del footer */
+}
+
+
+/* Mantieni gli stili esistenti che hai già in App.css, come .App, .App-logo, ecc. */
 .App {
-text-align: center;
+  text-align: center;
 }
 
 .App-logo {
-height: 40vmin;
-pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-.App-logo {
-animation: App-logo-spin infinite 20s linear;
-}
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
-background-color: #282c34;
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-font-size: calc(10px + 2vmin);
-color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-link {
-color: #61dafb;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-from {
-transform: rotate(0deg);
-}
-to {
-transform: rotate(360deg);
-}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .page-enter {
-opacity: 0;
-transform: translateX(20px);
+  opacity: 0;
+  transform: translateX(20px);
 }
 
 .page-enter-active {
-opacity: 1;
-transform: translateX(0);
-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }
 
 .page-exit {
-opacity: 1;
-transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .page-exit-active {
-opacity: 0;
-transform: translateX(-20px);
-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }

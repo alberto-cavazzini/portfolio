@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Footer.css"; // Importa il file CSS per il Footer
+import { Link } from "react-router-dom";
 
 function Footer() {
   const handleFollowClick = () => {
@@ -29,22 +30,34 @@ function Footer() {
 
         <div className="button-group">
           <button onClick={handleFollowClick}>
-            <img src="/images/linkedin-logo.png" alt="Linkedin" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/linkedin-logo.png"}
+              alt="Linkedin"
+            />
             Follow
           </button>
 
           {/* Aggiunta la classe 'github-button' per stili specifici */}
           <button onClick={handleGitHubClick} className="github-button">
-            <img src="/images/github-icon.png" alt="GitHub" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/github-icon.png"}
+              alt="GitHub"
+            />
           </button>
 
           {/* Aggiunta la classe 'mail-button' per stili specifici */}
           <button onClick={handleMailClick} className="mail-button">
-            <img src="/images/mail-icon.png" alt="Mail" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/mail-icon.png"}
+              alt="Mail"
+            />
           </button>
 
           <button onClick={handleWhatsappClick}>
-            <img src="/images/whatsapp-icon.png" alt="Contattaci su WhatsApp" />{" "}
+            <img
+              src={process.env.PUBLIC_URL + "/images/whatsapp-icon.png"}
+              alt="Contattaci su WhatsApp"
+            />
           </button>
         </div>
       </div>
@@ -52,8 +65,8 @@ function Footer() {
       {/* NUOVO: Spostato il div dei link qui, fuori da 'author' */}
       <div className="footer-links-group">
         <h4>Developer Hub</h4>
-        <a href="http://localhost:3000/projects">Esplora</a>
-        <a href="http://localhost:3000/contact">Contattami</a>
+        <Link to="/projects">Esplora</Link>
+        <Link to="/contact">Contattami</Link>
         <a
           href="https://www.figma.com/file/DE10s1y7IDKYa4e6ichT2F/CV-Alberto-Cavazzini"
           target="_blank" // Apre il link in una nuova scheda

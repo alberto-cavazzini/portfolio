@@ -75,7 +75,7 @@ const skillsData: SkillGroup[] = [
         name: "Python",
         description:
           "Sfrutto la versatilità di Python per lo sviluppo backend, automazione e analisi dati, creando soluzioni efficienti e potenti per ogni esigenza.",
-        imageUrl: "/images/python-icon.png",
+        imageUrl: process.env.PUBLIC_URL + "/images/python-icon.png",
       },
     ],
   },
@@ -93,7 +93,7 @@ const skillsData: SkillGroup[] = [
         name: "GitHub",
         description:
           "Non solo controllo versione, ma anche piattaforma di collaborazione. Uso GitHub per gestire repository, revisioni di codice e contribuire a progetti open-source, garantendo trasparenza e organizzazione.",
-        imageUrl: "/images/github-icon.png",
+        imageUrl: process.env.PUBLIC_URL + "/images/github-icon.png",
       },
       {
         name: "npm",
@@ -327,7 +327,10 @@ const About = () => {
         >
           <div className="intro-flex-container">
             <img
-              src="/images/Adobe Express - file (2).png"
+              src={
+                process.env.PUBLIC_URL +
+                "/images/Adobe Express - file (2)-min.png"
+              }
               alt=""
               className="image-chisono"
             />
@@ -370,18 +373,25 @@ const About = () => {
             </motion.div>
 
             <img
-              src="/images/Adobe Express - file (3).png"
+              src={
+                process.env.PUBLIC_URL +
+                "/images/Adobe Express - file (3)-min.png"
+              }
               alt=""
               className="image-cosa"
             />
           </div>
           <div className="intro-flex-container">
             <img
-              src="/images/Adobe Express - file (4).png"
+              src={
+                process.env.PUBLIC_URL +
+                "/images/Adobe Express - file (4)-min.png"
+              }
               alt=""
               className="image-filosofia"
             />
             {/* Card "La mia filosofia" */}
+
             <motion.div
               className="section right-align"
               initial="hiddenRight"
