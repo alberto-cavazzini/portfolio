@@ -183,6 +183,13 @@
     white-space: normal; /* MODIFICATO: Permette al testo dei link di andare a capo su mobile */
   }
 
+  .footer .container {
+    margin-left: 0; /* Rimuovi il margin-left auto */
+    margin-top: 0; /* Già gestito dal gap del footer o dal margin-bottom dei figli */
+    padding: 20px; /* Mantieni il padding interno se desiderato */
+    align-items: flex-end; /* Allinea il contenuto a destra all'interno del suo contenitore */
+  }
+
   .copyright {
     text-align: right; /* MODIFICATO: Allinea il testo del copyright a destra */
   }
