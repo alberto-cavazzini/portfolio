@@ -8,7 +8,7 @@
   transform: translateY(20px); /* Dichiarazione principale */
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Mantiene il contenuto all'interno del box */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +48,7 @@
 }
 
 .about .container {
-  padding: 0px 30px 30px 30px;
+  padding: 0px 30px 30px 30px; /* Padding di default per desktop */
   width: 100%;
   max-width: 1200px;
   box-sizing: border-box;
@@ -60,7 +60,7 @@
   align-items: flex-start;
   width: 100%;
   gap: 40px;
-  padding: 0 20px;
+  padding: 0 20px; /* Padding di default per desktop */
   box-sizing: border-box;
 }
 
@@ -363,17 +363,7 @@
 }
 
 /* FLESSIBILIZZAZIONE DEI CONTENITORI INTRODUZIONE */
-.intro-flex-container {
-  display: flex;
-  flex-direction: row; /* Default per desktop */
-  align-items: center;
-  gap: 80px; /* Riduci il gap per avere più spazio */
-  padding-bottom: 50px;
-  flex-wrap: wrap; /* Permette agli elementi di andare a capo */
-  justify-content: center; /* Centra gli elementi quando vanno a capo */
-  border-bottom: 0.9px solid #222222;
-}
-
+.intro-flex-container,
 .last-intro-flex-container {
   display: flex;
   flex-direction: row; /* Default per desktop */
@@ -382,7 +372,15 @@
   padding-bottom: 50px;
   flex-wrap: wrap; /* Permette agli elementi di andare a capo */
   justify-content: center; /* Centra gli elementi quando vanno a capo */
+  border-bottom: 0.9px solid #222222; /* Bordo di default, verrà modificato in media query */
 }
+
+.last-intro-flex-container {
+  /* Questo dovrebbe sovrascrivere il border-bottom del .intro-flex-container generale se applicato,
+     ma lo gestiamo in modo più robusto nelle media queries. */
+  border-bottom: none; /* Rimuovi bordo se vuoi che l'ultima sezione non abbia bordo */
+}
+
 
 /* RIMOZIONE MARGINI NEGATIVI E FLESSIBILIZZAZIONE IMMAGINI */
 .image-chisono,
@@ -391,9 +389,7 @@
   width: 40vw; /* Usa la larghezza della viewport per fluidità */
   max-width: 450px; /* Limita la dimensione massima per desktop */
   height: auto;
-  margin-bottom: 0; /* Rimuovi margini negativi */
-  margin-left: 0; /* Rimuovi margini negativi */
-  margin-right: 0; /* Rimuovi margini negativi */
+  margin: 0; /* Assicurati che non ci siano margini negativi o in eccesso */
 }
 
 
@@ -416,6 +412,13 @@
   box-sizing: border-box;
 }
 
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 /* --- Media Queries --- */
 
 @media (max-width: 1024px) {
@@ -425,7 +428,19 @@
     flex-direction: column; /* Imposta a colonna per schermi più piccoli */
     gap: 50px; /* Riduci il gap */
     padding-bottom: 50px;
+    border-bottom: none; /* Rimuovi bordo tra le sezioni su tablet, lo gestiamo dopo */
   }
+
+  /* Rimuovi il bordo dall'ultima sezione se non vuoi */
+  .last-intro-flex-container {
+    border-bottom: none;
+  }
+
+  /* Aggiungi bordo solo ai contenitori intermedi */
+  .intro-flex-container:not(:last-of-type) {
+    border-bottom: 0.9px solid #222222;
+  }
+
 
   .image-cosa,
   .image-chisono,
@@ -456,14 +471,15 @@
     font-size: 1.1em; /* Riduci la dimensione del sottotitolo */
   }
 
-  .skills-group {
-    min-width: unset; /* Rimuovi il min-width per maggiore flessibilità */
-    width: 48%; /* Due colonne per tablet, con gap */
-    max-width: unset; /* Rimuovi max-width, la width % lo gestisce */
-  }
-
   .why-me-cards {
     width: 90%; /* Occupano più spazio */
+  }
+
+  .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
   }
 }
 
@@ -477,8 +493,8 @@
   }
 
   .about .container {
-    padding: 0px 15px 15px 15px; /* Riduci il padding del container principale */
-  }
+    align-items: center;
+    }
 
   .about-content {
     gap: 20px; /* Riduci ulteriormente il gap */
@@ -497,8 +513,8 @@
     border-bottom: 0.9px solid #222222;
   }
   .last-intro-flex-container {
-      border-bottom: 0.9px solid #222222; /* Se vuoi il bordo anche sotto l'ultima sezione */
-      padding-bottom: 50px;
+      border-bottom: none; /* Rimuovi il bordo sotto l'ultima sezione intro, se non desiderato */
+      /* Se vuoi il bordo anche sotto l'ultima sezione, ripristina: border-bottom: 0.9px solid #222222; */
   }
 
   .image-cosa,
@@ -506,8 +522,6 @@
   .image-filosofia {
     width: 85vw; /* Occupa quasi tutta la larghezza dello schermo */
     max-width: 350px; /* Limite massimo per evitare immagini troppo grandi */
-    margin-bottom: 0; /* Rimuovi i margini negativi */
-    margin: 0 auto; /* Centra l'immagine */
   }
 
   .section {
@@ -529,7 +543,13 @@
 
   .skills {
     flex-direction: column; /* Una colonna per mobile */
+    align-items: center;
     gap: 15px;
+  }
+
+  .skills-grid {
+    flex-direction: column; /* Una colonna per mobile */
+    align-items: center;
   }
 
   .skills-group {

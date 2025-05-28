@@ -487,68 +487,70 @@ const About = () => {
               </button>
             </div>
           </div>
+          <div className="skills-grid">
+            {skillsData.map((group) => (
+              <motion.div
+                className="skills-group"
+                key={group.title}
+                layout
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <h4>{group.title}</h4>
+                <div className="skills-row">
+                  {group.skills.map((skill, index) => {
+                    return (
+                      <React.Fragment key={skill.name}>
+                        <motion.div
+                          variants={skillItemVariants}
+                          initial="hidden"
+                          animate={isVisible ? "visible" : "hidden"}
+                          custom={index}
+                          whileHover="whileHover"
+                          whileTap="whileTap"
+                          className={`skill-item ${
+                            expandedSkill === skill.name ? "expanded" : ""
+                          } ${showImages ? "show-images" : ""}`}
+                          onClick={() =>
+                            toggleSkillDescription(skill.name, group.title)
+                          }
+                        >
+                          {showImages && skill.imageUrl ? (
+                            <img
+                              src={skill.imageUrl}
+                              alt={skill.name}
+                              style={{
+                                maxWidth: "50px",
+                                maxHeight: "50px",
+                                borderRadius: "5px",
+                              }}
+                            />
+                          ) : (
+                            <strong>{skill.name}</strong>
+                          )}
+                        </motion.div>
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
 
-          {skillsData.map((group) => (
-            <motion.div
-              className="skills-group"
-              key={group.title}
-              layout
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-            >
-              <h4>{group.title}</h4>
-              <div className="skills-row">
-                {group.skills.map((skill, index) => {
-                  return (
-                    <React.Fragment key={skill.name}>
-                      <motion.div
-                        variants={skillItemVariants}
-                        initial="hidden"
-                        animate={isVisible ? "visible" : "hidden"}
-                        custom={index}
-                        whileHover="whileHover"
-                        whileTap="whileTap"
-                        className={`skill-item ${
-                          expandedSkill === skill.name ? "expanded" : ""
-                        } ${showImages ? "show-images" : ""}`}
-                        onClick={() =>
-                          toggleSkillDescription(skill.name, group.title)
-                        }
-                      >
-                        {showImages && skill.imageUrl ? (
-                          <img
-                            src={skill.imageUrl}
-                            alt={skill.name}
-                            style={{
-                              maxWidth: "50px",
-                              maxHeight: "50px",
-                              borderRadius: "5px",
-                            }}
-                          />
-                        ) : (
-                          <strong>{skill.name}</strong>
-                        )}
-                      </motion.div>
-                    </React.Fragment>
-                  );
-                })}
-              </div>
-
-              <AnimatePresence>
-                {expandedGroup === group.title && expandedSkill && (
-                  <motion.div
-                    className="skill-description"
-                    variants={descriptionVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                  >
-                    {group.skills.find((skill) => skill.name === expandedSkill)
-                      ?.description || ""}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                <AnimatePresence>
+                  {expandedGroup === group.title && expandedSkill && (
+                    <motion.div
+                      className="skill-description"
+                      variants={descriptionVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                    >
+                      {group.skills.find(
+                        (skill) => skill.name === expandedSkill
+                      )?.description || ""}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         <div className="why-me">

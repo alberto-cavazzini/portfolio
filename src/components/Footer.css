@@ -2,10 +2,11 @@
 
 .footer {
   display: flex;
-  flex-direction: row; /* Il footer gestisce i suoi figli (autore, gruppo link, copyright) in riga */
-  gap: 100px; /* Spazio tra gli elementi principali del footer */
-  justify-content: space-between;
-  align-items: center; /* Centra verticalmente gli elementi principali per default (per mobile) */
+  flex-direction: row; /* Mantiene la direzione in riga per default (desktop) */
+  flex-wrap: wrap; /* Permette agli elementi di andare a capo su schermi più piccoli */
+  gap: 100px; /* Spazio tra gli elementi principali del footer (desktop) */
+  justify-content: space-between; /* Distribuisce lo spazio tra gli elementi (desktop) */
+  align-items: flex-start; /* Allinea gli elementi in alto per il layout in riga */
   background-color: #0c0c0d;
   border-top: 0.9px solid #333;
   color: #f0f0f0;
@@ -13,19 +14,20 @@
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
-  height: auto;
+  min-height: 120px; /* Altezza minima generale */
   bottom: 0;
   left: 0;
 }
 
 .footer .container {
   display: flex;
-  flex-direction: column; /* Imposta il container come colonna per gestire il copyright */
-  justify-content: flex-end; /* Spinge il contenuto (il copyright) in basso */
-  margin-left: auto; /* Spinge il container a destra, occupando lo spazio rimanente */
-  align-items: flex-end; /* Allinea il copyright a destra all'interno del suo container */
-  height: 100%; /* Assicura che il container occupi l'altezza del footer per permettere a justify-content di funzionare */
-  margin-top: 100px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end; /* Allinea il copyright a destra all'interno del suo container su desktop */
+  height: 100%;
+  margin-top: 0; /* Assicurati che non ci sia un margin-top di default se non in media query */
+  /* padding-top: 100px; */ /* Rimuovi o commenta se non è intenzionale */
+  /* padding-left: auto; */ /* NON È UN VALORE CSS VALIDO, RIMOSSO */
 }
 
 .footer p {
@@ -54,12 +56,16 @@
 }
 
 .author {
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
-  flex-direction: column; /* Gli elementi diretti di .author (h4, p, e .button-group) sono in colonna */
+  display: flex; /* MODIFICATO: DEVE ESSERE FLEX PER FUNZIONARE COME CONTENITORE FLEXBOX */
+  justify-content: flex-start; /* Allinea a sinistra su desktop */
+  align-items: flex-start; /* Allinea a sinistra su desktop */
+  flex-direction: column;
   font-size: 14px;
-  margin-bottom: 40px; /* Margine inferiore per mobile, sarà resettato in media query */
+}
+
+.context-footer { /* Questa classe è nuova e non ho il suo HTML. Se causa overflow, va indagata. */
+  display: flex;
+  gap: 70px;
 }
 
 /* Regole per gli elementi interni a .author */
@@ -74,10 +80,12 @@
 
 /* Stile per il contenitore dei pulsanti */
 .button-group {
-  display: flex; /* Abilita Flexbox per i pulsanti */
-  flex-direction: row; /* Disponi i pulsanti in riga */
-  gap: 10px; /* Aggiungi spazio tra i pulsanti */
-  margin-top: 10px; /* Spazio sopra il gruppo di pulsanti */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Permette ai pulsanti di andare a capo */
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-start; /* Allinea a sinistra su desktop */
 }
 
 /* Stile comune per i pulsanti all'interno di .author */
@@ -90,16 +98,16 @@
   transition: all 0.3s ease;
   font-size: 14px;
   padding: 5px 5px;
-  width: max-content; /* Il pulsante si adatta al contenuto */
-  display: flex; /* Usa Flexbox per allineare immagine e testo */
-  align-items: center; /* Centra verticalmente immagine e testo */
-  justify-content: center; /* Centra orizzontalmente il contenuto del pulsante */
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
 }
 
 .author button:hover {
   background-color: #0F83FF;
-  transform: translateY(-2px); /* Effetto leggero al passaggio del mouse */
+  transform: translateY(-2px);
 }
 
 .author button img {
@@ -109,48 +117,82 @@
 
 /* Stile per il contenitore dei link Esplora e Contattami */
 .footer-links-group {
-  display: flex; /* Utilizza Flexbox per allineare i link */
-  flex-direction: column; /* Disponi i link in colonna (uno sotto l'altro) */
-  gap: 5px; /* Spazio tra i link */
-  justify-content: flex-start; /* Allinea i link in cima al div */
-  align-items: flex-start; /* Allinea gli elementi figli a sinistra all'interno del loro contenitore */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  align-items: flex-start; /* Allinea a sinistra su desktop */
 }
 
 .footer-links-group a {
-  color: #f0f0f0; /* Colore del testo per i link */
-  text-decoration: none; /* Rimuove la sottolineatura predefinita */
+  color: #f0f0f0;
+  text-decoration: none;
   transition: color 0.3s ease;
-  white-space: nowrap; /* Impedisce il wrap del testo sui link */
+  white-space: nowrap; /* Mantiene il testo su una riga per desktop */
 }
 
 .footer-links-group a:hover {
-  color: #0F83FF; /* Colore al passaggio del mouse */
+  color: #0F83FF;
 }
 
 .footer-links-group h4 {
   margin-bottom: 4px;
 }
 
-/* --- */
-@media (min-width: 768px) {
+.copyright {
+  color: #83858D;
+  font-size: 10px;
+  text-align: right; /* Allineato a destra per default (desktop) */
+  width: 100%;
+}
+
+
+@media (max-width: 767px) {
   .footer {
-    /* La modifica chiave è qui: imposta l'altezza minima per il footer */
-    min-height: 120px; /* Regola questa altezza minima a seconda delle tue esigenze */
-    align-items: stretch; /* Permette agli elementi figli di estendersi in altezza */
-    padding-bottom: 20px;
+    flex-direction: column; /* Forza l'impilamento verticale per schermi piccoli */
+    gap: 30px; /* Riduci il gap quando gli elementi sono impilati */
+    justify-content: center; /* Centra gli elementi impilati */
+    align-items: center; /* Centra orizzontalmente gli elementi impilati */
+    padding: 20px 15px; /* Riduci il padding sui lati per mobile */
+    min-height: auto; /* L'altezza si adatta al contenuto quando impilati */
+    width: 100%; /* Già impostato, ma lo manteniamo per chiarezza */
+  }
+
+  /* Aggiungi un margine inferiore a tutti gli elementi principali del footer quando impilati */
+  .footer > *:not(:last-child) {
+    margin-bottom: 20px;
   }
 
   .author {
-    margin-bottom: 0;
-    text-align: left;
-    align-items: flex-start;
+    width: 100%; /* Occupano tutta la larghezza disponibile */
+    text-align: center; /* Centra il testo */
+    align-items: center; /* Centra gli elementi interni */
+  }
+
+  .button-group {
+    justify-content: center; /* Centra i pulsanti */
+  }
+
+  .footer-links-group {
+    width: 100%; /* Occupano tutta la larghezza disponibile */
+    text-align: center; /* Centra il testo dei link */
+    align-items: center; /* Centra gli elementi interni */
+  }
+
+  .footer-links-group a {
+    white-space: normal; /* MODIFICATO: Permette al testo dei link di andare a capo su mobile */
+  }
+
+  .copyright {
+    text-align: right; /* MODIFICATO: Allinea il testo del copyright a destra */
   }
 }
-/* --- */
 
-.copyright {
-  color: #83858D; /* Colore del testo per il copyright */
-  font-size: 10px;
-  text-align: right; /* Assicura che il testo sia allineato a destra */
-  width: 100%; /* Assicura che occupi tutta la larghezza disponibile nel suo container */
+/* Opzionale: Media query per schermi tablet, se vuoi un comportamento intermedio */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .footer {
+        gap: 50px; /* Riduci il gap per i tablet se 100px è troppo */
+        padding: 25px 20px;
+        width: 100%; /* Già impostato, ma lo manteniamo per chiarezza */
+    }
 }
