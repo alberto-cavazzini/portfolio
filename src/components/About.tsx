@@ -336,7 +336,7 @@ const About = () => {
             />
             {/* Card "Chi sono" */}
             <motion.div
-              className="section right-align"
+              className="right-align"
               initial="hiddenLeft"
               animate={isVisible ? "visibleLeft" : "hiddenLeft"}
               variants={cardZigZagVariants}
@@ -355,7 +355,7 @@ const About = () => {
           <div className="intro-flex-container">
             {/* Card "Cosa faccio" */}
             <motion.div
-              className="section left-align"
+              className="left-align"
               initial="hiddenLeft"
               animate={isVisible ? "visibleLeft" : "hiddenLeft"}
               variants={cardZigZagVariants}
@@ -393,7 +393,7 @@ const About = () => {
             {/* Card "La mia filosofia" */}
 
             <motion.div
-              className="section right-align"
+              className="right-align"
               initial="hiddenRight"
               animate={isVisible ? "visibleRight" : "hiddenRight"}
               variants={cardZigZagVariants}
@@ -414,7 +414,7 @@ const About = () => {
             <div>
               {/* Card "Ciò che cerco" */}
               <motion.div
-                className="section left-align"
+                className="left-align"
                 initial="hiddenLeft"
                 animate={isVisible ? "visibleLeft" : "hiddenLeft"}
                 variants={cardZigZagVariants}
@@ -431,7 +431,7 @@ const About = () => {
 
             {/* Card "Oltre il codice" */}
             <motion.div
-              className="section right-align"
+              className="right-align"
               initial="hiddenRight"
               animate={isVisible ? "visibleRight" : "hiddenRight"}
               variants={cardZigZagVariants}

@@ -1,5 +1,10 @@
 /* About.css */
-
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 /* Stile generale per la sezione About */
 .about {
   padding: 0;
@@ -57,7 +62,7 @@
 .about-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   gap: 40px;
   padding: 0 20px; /* Padding di default per desktop */
@@ -81,9 +86,21 @@
   margin: 0;
 }
 
-.section.right-align,
-.section.left-align {
+.right-align,
+.left-align {
   align-self: center; /* Centrato di default */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #0e0e0e;
+  height: auto;
+  max-width: 450px; /* Aumentato leggermente */
+  padding: 20px; /* Aumentato leggermente */
+  text-align: left;
+  border: 0.9px solid #222222;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);  margin: 0;
 }
 
 .section p,
@@ -373,6 +390,7 @@
   flex-wrap: wrap; /* Permette agli elementi di andare a capo */
   justify-content: center; /* Centra gli elementi quando vanno a capo */
   border-bottom: 0.9px solid #222222; /* Bordo di default, verrà modificato in media query */
+
 }
 
 .last-intro-flex-container {
@@ -425,7 +443,6 @@
   /* Assicurati che i container flex vadano a capo per tablet */
   .intro-flex-container,
   .last-intro-flex-container {
-    flex-direction: column; /* Imposta a colonna per schermi più piccoli */
     gap: 50px; /* Riduci il gap */
     padding-bottom: 50px;
     border-bottom: none; /* Rimuovi bordo tra le sezioni su tablet, lo gestiamo dopo */
@@ -448,13 +465,11 @@
     width: 60vw; /* Più grande su tablet */
     max-width: 400px; /* Limita la dimensione massima su tablet */
     margin: 0 auto; /* Centra le immagini */
-    order: 1; /* Le immagini appaiono prima del testo nelle sezioni */
   }
 
   /* Le sezioni di testo appaiono dopo l'immagine */
   .section {
     max-width: 90%; /* Occupa più larghezza su tablet */
-    order: 2;
     margin: 0 auto; /* Centra le card */
     padding: 15px; /* Riduci leggermente il padding */
   }
@@ -480,6 +495,35 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+  }
+}
+
+@media (max-width: 960px) {
+  .intro-flex-container,
+  .last-intro-flex-container {
+    flex-direction: column;
+    gap: 50px; /* Riduci il gap */
+    padding-bottom: 50px;
+    border-bottom: none; /* Rimuovi bordo tra le sezioni su tablet, lo gestiamo dopo */
+  }
+
+  .image-cosa,
+  .image-chisono,
+  .image-filosofia {
+    order: 2;
+  }
+
+  .section {
+    max-width: 90%;
+    /* order: 2; <-- Rimuoviamo questo qui e lo mettiamo nel breakpoint successivo */
+    margin: 0 auto;
+    padding: 15px;
+
+    /* Reimposta o adatta le proprietà flex per il layout a colonna */
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 1;
+    min-width: auto;
   }
 }
 
@@ -575,6 +619,16 @@
   .why-me-cards h2 {
     font-size: 1.3em;
   }
+
+  .skills-group .skills-row { /* Assicurati di specificare il selettore completo per non sovrascrivere globalmente */
+    display: flex;
+    flex-wrap: wrap; /* Fondamentale per il wrap */
+    gap: 5px; /* Imposta un gap specifico (es. 10px) tra gli elementi quando vanno a capo */
+    margin-top: 20px;    /* Aggiungi un margine superiore se necessario */
+    margin-bottom: 20px; /* Aggiungi un margine inferiore se necessario */
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -607,5 +661,11 @@
   .skills-group .skill-item {
     font-size: 0.8em;
     padding: 5px 10px;
+  }
+
+  .skills-group .skills-row {
+    gap: 8px; /* Riduci il gap ulteriormente per schermi molto piccoli */
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 }
