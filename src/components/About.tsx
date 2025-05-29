@@ -126,11 +126,16 @@ const skillsData: SkillGroup[] = [
 ];
 
 const About = () => {
-  const aboutSectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  // Rimuovi aboutSectionRef e Intersection Observer se vuoi che l'animazione parta subito.
+  // Se vuoi mantenere l'observer per altre sezioni, puoi lasciare il ref ma non usarlo per isVisible.
+  // const aboutSectionRef = useRef<HTMLElement>(null);
+
+  // Imposta isVisible a true fin dall'inizio
+  const [isVisible, setIsVisible] = useState(true); // MODIFICATO QUI
+
   const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
   const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false); // Probabilmente non più necessario se animi subito
   const [currentText, setCurrentText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -149,33 +154,45 @@ const About = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [togglePosition, setTogglePosition] = useState("text");
 
+  // Rimuovi o adatta l'Intersection Observer se non serve più per l'animazione iniziale
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            if (!hasAnimated) {
-              setHasAnimated(true);
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
+    // Se vuoi che l'animazione parta immediatamente, puoi rimuovere completamente
+    // la logica dell'Intersection Observer.
+    // In alternativa, se vuoi che l'observer gestisca altre logiche future,
+    // assicurati che non impatti l'animazione iniziale.
 
-    const currentRef = aboutSectionRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    // Poiché isVisible è già true, setHasAnimated può essere true subito
+    setHasAnimated(true);
 
-    return () => {
-      observer.disconnect();
-    };
-  }, [hasAnimated]);
+    // Rimuovi questo blocco se l'observer non è più necessario per questo effetto
+    // const observer = new IntersectionObserver(
+    //   (entries) => {
+    //     entries.forEach((entry) => {
+    //       if (entry.isIntersecting) {
+    //         setIsVisible(true); // Questo non cambierà nulla se è già true
+    //         if (!hasAnimated) {
+    //           setHasAnimated(true);
+    //         }
+    //       }
+    //     });
+    //   },
+    //   {
+    //     threshold: 0.1,
+    //   }
+    // );
 
+    // const currentRef = aboutSectionRef.current;
+    // if (currentRef) {
+    //   observer.observe(currentRef);
+    // }
+
+    // return () => {
+    //   observer.disconnect();
+    // };
+  }, []); // Esegui solo una volta al mount
+
+  // La logica di digitazione dipende da hasAnimated. Poiché hasAnimated sarà true subito,
+  // il testo inizierà a digitare immediatamente.
   useEffect(() => {
     let timer: NodeJS.Timeout;
 
@@ -212,7 +229,7 @@ const About = () => {
     textIndex,
     currentText,
     isDeleting,
-    hasAnimated,
+    hasAnimated, // hasAnimated qui farà partire la digitazione subito
     sentences,
     typingSpeed,
     pauseDuration,
@@ -303,12 +320,13 @@ const About = () => {
   return (
     <section
       className={`about ${isVisible ? "fade-in" : ""}`}
-      ref={aboutSectionRef}
+      // Non è più necessario il ref qui se non usi l'Intersection Observer per isVisible
+      // ref={aboutSectionRef}
     >
       <motion.div
         className="background-heading"
         initial="hidden"
-        animate={isVisible ? "visible" : "hidden"}
+        animate={isVisible ? "visible" : "hidden"} // isVisible è già true
         variants={headingVariants}
       >
         <motion.h1 variants={headingVariants}>
@@ -323,7 +341,7 @@ const About = () => {
         <motion.div
           className="about-content"
           initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
+          animate={isVisible ? "visible" : "hidden"} // isVisible è già true
         >
           <div className="intro-flex-container">
             <img
@@ -338,7 +356,7 @@ const About = () => {
             <motion.div
               className="right-align"
               initial="hiddenLeft"
-              animate={isVisible ? "visibleLeft" : "hiddenLeft"}
+              animate={isVisible ? "visibleLeft" : "hiddenLeft"} // isVisible è già true
               variants={cardZigZagVariants}
               custom={0}
             >
@@ -357,7 +375,7 @@ const About = () => {
             <motion.div
               className="left-align"
               initial="hiddenLeft"
-              animate={isVisible ? "visibleLeft" : "hiddenLeft"}
+              animate={isVisible ? "visibleLeft" : "hiddenLeft"} // isVisible è già true
               variants={cardZigZagVariants}
               custom={1}
             >
@@ -395,7 +413,7 @@ const About = () => {
             <motion.div
               className="right-align"
               initial="hiddenRight"
-              animate={isVisible ? "visibleRight" : "hiddenRight"}
+              animate={isVisible ? "visibleRight" : "hiddenRight"} // isVisible è già true
               variants={cardZigZagVariants}
               custom={2}
             >
@@ -416,7 +434,7 @@ const About = () => {
               <motion.div
                 className="left-align"
                 initial="hiddenLeft"
-                animate={isVisible ? "visibleLeft" : "hiddenLeft"}
+                animate={isVisible ? "visibleLeft" : "hiddenLeft"} // isVisible è già true
                 variants={cardZigZagVariants}
                 custom={3}
               >
@@ -433,7 +451,7 @@ const About = () => {
             <motion.div
               className="right-align"
               initial="hiddenRight"
-              animate={isVisible ? "visibleRight" : "hiddenRight"}
+              animate={isVisible ? "visibleRight" : "hiddenRight"} // isVisible è già true
               variants={cardZigZagVariants}
               custom={4}
             >
@@ -503,7 +521,7 @@ const About = () => {
                         <motion.div
                           variants={skillItemVariants}
                           initial="hidden"
-                          animate={isVisible ? "visible" : "hidden"}
+                          animate={isVisible ? "visible" : "hidden"} // isVisible è già true
                           custom={index}
                           whileHover="whileHover"
                           whileTap="whileTap"
