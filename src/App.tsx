@@ -7,7 +7,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; // Importa il componente Footer
 import ScrollToTopButton from "./components/ScrollToTopButton"; // Importa il nuovo componente TSX
 import ScrollToTop from "./components/ScrollToTop";
-import VWO from "./components/VWO"; // Importa il componente VWO
 import "./App.css"; // Assicurati che questo sia importato
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
 
   return (
     <Router basename="/portfolio">
-      <VWO /> {/* Aggiungi il componente VWO qui */}
       <ScrollToTop />
       {/* Questo è il nuovo div principale che sarà un container flex */}
       <div className="main-app-container">
