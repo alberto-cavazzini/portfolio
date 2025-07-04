@@ -23,16 +23,36 @@ function Contact() {
           method="POST"
         >
           <div className="form-group">
-            <label htmlFor="name">Nome:</label>
-            <input type="text" id="name" name="name" required />
+            <label htmlFor="name">Il tuo Nome Completo:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder=" es. Mario Rossi"
+              required
+            />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
+            <label htmlFor="email">La tua Email di Contatto:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="es. mario.rossi@esempio.com"
+              required
+            />
           </div>
           <div className="form-group">
-            <label htmlFor="message">Messaggio:</label>
-            <textarea id="message" name="message" rows={5} required></textarea>
+            <label htmlFor="message">
+              Il tuo Messaggio (descrivi la tua richiesta):
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              placeholder="Sono interessato a..."
+              required
+            ></textarea>
           </div>
           <button type="submit">Invia messaggio</button>
 
