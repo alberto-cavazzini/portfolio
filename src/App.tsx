@@ -14,7 +14,7 @@ function App() {
     "https://www.figma.com/design/DE10s1y7IDKYa4e6ichT2F/CV-Alberto-Cavazzini?node-id=0-1&p=f&t=EehYjaiLj46uOV9q-0";
 
   return (
-    <Router basename="/portfolio">
+    <Router>
       <ScrollToTop />
       {/* Questo è il nuovo div principale che sarà un container flex */}
       <div className="main-app-container">
